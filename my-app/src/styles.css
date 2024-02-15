@@ -1,0 +1,25 @@
+header {
+  text-align: center;
+  grid-area: head;
+  background-color: #F48700;
+  height: 100%;
+  color: white;
+}
+header h1 {
+  display: none;
+}
+header nav {
+  height: 100%;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header nav ul li a {
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,27 @@
+header {
+    text-align: center;
+    grid-area: head;
+    background-color: #F48700;
+    height: 100%;
+    color: white;
+    h1 {
+      display: none;
+    }
+    nav {
+      height: 100%;
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          a {
+            font-size: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
