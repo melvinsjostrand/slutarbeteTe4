@@ -1,7 +1,11 @@
+@import 'colors';
+
+
+
 header {
     text-align: center;
     grid-area: head;
-    background-color: #F48700;
+    background-color: $color-primary;
     height: 100%;
     color: white;
     h1 {
