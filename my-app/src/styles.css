@@ -1,3 +1,11 @@
+@font-face {
+  font-family: AustieBost;
+  src: url(./AustieBostKittenKlub.ttf);
+}
+@font-face {
+  font-family: Animal-Paw;
+  src: url(./Animal-Paw.ttf);
+}
 header {
   text-align: center;
   grid-area: head;
@@ -22,4 +30,8 @@ header nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+}
+
+body {
+  font-family: AustieBost;
 }/*# sourceMappingURL=styles.css.map */

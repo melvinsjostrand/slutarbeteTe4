@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
   <nav>
       <ul>
           <li>
-              <a [routerLink]="[' ']">startsida</a>
+              <a [routerLink]="['index']">startsida</a>
           </li>
           <li>
               <a [routerLink]="['blog']">blogg</a>

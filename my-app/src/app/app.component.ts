@@ -14,11 +14,12 @@ import {NavComponent } from "./nav/nav.component";
     RouterModule,
     NavComponent],
   template: `
-
-  <app-nav> </app-nav>
-  <section class="content">
+    <div>
+  <app-nav></app-nav>
+  <div>
   <router-outlet></router-outlet>
-</section>
+  </div>
+</div>
 `,
   styleUrl: '../styles.scss'
 })
