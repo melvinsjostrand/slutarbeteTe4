@@ -1,0 +1,22 @@
+<header>
+    <div>
+    <h1>skapa blogg - Webbshop</h1>
+    <div>
+    <nav>
+        <ul>
+            <li>
+                <a [routerLink]="['index']">startsida</a>
+            </li>
+            <li>
+                <a [routerLink]="['blog']">blogg</a>
+            </li>
+            <li>
+                <a [routerLink]="['product']">product</a>
+            </li>
+            <li *ngIf="role === 2"><a routerLink="/admin">Admin Panel</a></li>
+            <li *ngIf="role === 1"><a routerLink="/user">User Panel</a></li>
+        </ul>
+    </nav>
+  </div>
+  </div>
+  </header>
