@@ -9,12 +9,12 @@
           padding: 20px;
           article {
             background-color: #A37319;
-            border: 1px solid #ccc;
+            border: 1px solid #FFF;
             border-radius: 8px;
             margin: 20px 0;
             padding: 20px;
             h2 {
-              color: #F48700;
+              color: #FFF;
               margin-bottom: 10px;
               text-align: center;
             }
@@ -26,13 +26,13 @@
                 height: auto;
               }
               figcaption {
-                color: #333;
+                color: #000;
                 font-style: italic;
                 text-align: right;
               }
             }
             p {
-              color: #ccc;
+              color: #FFF;
               margin-bottom: 15px;
               text-align: right;
             }
@@ -46,7 +46,7 @@
           height: 25px;
           border-radius: 25px;
           background-color: #F48700;
-          color: white;
+          color: #FFF;
           border: none;
           cursor: pointer;
           transition: background-color 0.3s;

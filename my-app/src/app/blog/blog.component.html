@@ -2,16 +2,15 @@
     <div class="wrapper">
         <main>
             <div>
-                <article>
-                    <h2>
-
-                    </h2>
-                    <figure>
-                        <img src="" alt="" />
-                        <figcaption>daww</figcaption>
-                    </figure>
-                    <p>mwdiamwidwami</p>
-                </article>
+            <article *ngFor="let blog of blogs" (click)="onBlogClicked(blog)">
+                <figure>
+                    <img src="" alt="">
+                    <figcaption>
+                        {{blog.username}}
+                    </figcaption>
+                </figure>
+                <p>{{blog.dateTimePosted}}</p>
+            </article>
             </div>
             <a routerlink = "/"> </a>
         </main>
