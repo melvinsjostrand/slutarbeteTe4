@@ -7,6 +7,9 @@ import{blog} from  './blog.interface';
   providedIn: 'root'
 })
 export class BlogService {
+  getBlog() {
+    throw new Error('Method not implemented.');
+  }
   private blogUrl = 'https://localhost:7063/Blog'; 
 
   constructor(private http: HttpClient) {}
