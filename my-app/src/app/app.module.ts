@@ -1,16 +1,30 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { JwtModule } from '@auth0/angular-jwt';
+
 import { AppComponent } from './app.component';
+import { PostService } from './service/postblog.service';
+
+
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 @NgModule({
   declarations: [
-    // your components, directives, pipes
+    AppComponent
   ],
   imports: [
-    // other modules
-    HttpClientModule // Import HttpClientModule here
+    BrowserModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: tokenGetter,
+      }
+    }),
   ],
-  providers: [],
-  bootstrap: [AppComponent] // Assuming AppComponent is your root component
+  providers: [PostService],
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }

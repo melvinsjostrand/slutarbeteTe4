@@ -2,9 +2,10 @@ import { Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
-import { ProductComponent } from './product/product.component';
-import { IndexComponent } from './index/index.component';
-import { BlogComponent } from './blog/blog.component';
+import { ProductComponent } from './components/product/product.component';
+import { IndexComponent } from './components/index/index.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { CreateblogComponent } from './components/createblog/createblog.component';
 
 const routeConfig: Routes = [
     {
@@ -26,6 +27,10 @@ const routeConfig: Routes = [
       path: 'blog',
       component: BlogComponent,
       title: 'blog'
+  },{
+    path :'blog/createblog',
+    component: CreateblogComponent,
+    title: 'Create blog post'
   }
   ];
   

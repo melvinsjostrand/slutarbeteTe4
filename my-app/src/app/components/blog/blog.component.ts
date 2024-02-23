@@ -1,8 +1,15 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
+  standalone:true,
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterModule,],
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })
@@ -31,7 +38,7 @@ export class BlogComponent {
 }
 
 @NgModule({
-  declarations: [BlogComponent],
+  declarations: [],
   imports: [CommonModule]
 })
 export class BlogModule {}

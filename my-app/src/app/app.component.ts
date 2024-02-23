@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
 
 
-
-import {NavComponent } from "./nav/nav.component";
+import {NavComponent } from "./components/nav/nav.component";
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,14 @@ import {NavComponent } from "./nav/nav.component";
     RouterModule,
     NavComponent],
   template: `
-    <div>
+  <body>
+  <div class=wrapper>
   <app-nav></app-nav>
   <div>
   <router-outlet></router-outlet>
   </div>
 </div>
+</body>
 `,
   styleUrl: '../styles.scss'
 })
@@ -27,3 +30,16 @@ import {NavComponent } from "./nav/nav.component";
 export class AppComponent {
   title = 'my-app';
 }
+
+@NgModule({
+  declarations: [
+    // your components, directives, pipes
+  ],
+  imports: [
+    // other modules
+    HttpClientModule 
+  ],
+  providers: [],
+  bootstrap: [AppComponent] 
+})
+export class AppModule { }

@@ -11,7 +11,6 @@
 }
 
 header {
-
     text-align: center;
     grid-area: head;
     background-color: $color-primary;
@@ -99,6 +98,56 @@ header {
           &:hover {
             background-color: darken(#F48700, 10%);
           }
+        }
+      }
+    }
+  }
+
+
+  @media only screen and (min-width: 1080px) {
+    body {
+      color: #333;
+      margin: 0;
+      padding: 0;
+      .wrapper {
+        width: 100%;
+        margin: 0 auto;
+        header {
+          text-align: right;
+          background-color: #F48700;
+          height: 80px;
+          color: white;
+          padding: 20px;
+          nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            justify-content: center;
+            align-items: center;
+            height: 100px; 
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              height: 100%;
+              li {
+                margin-right: 70px;
+                a {
+                  text-decoration: none;
+                  color: white;
+                  font-weight: bold;
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+        main{
+          font-family: aloha;
         }
       }
     }

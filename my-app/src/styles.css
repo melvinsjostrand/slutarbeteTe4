@@ -34,4 +34,107 @@ header nav ul li a {
 
 body {
   font-family: AustieBost;
+}
+
+#blogg .wrapper main div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+#blogg .wrapper main div article {
+  background-color: #A37319;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px 0;
+  padding: 20px;
+}
+#blogg .wrapper main div article h2 {
+  color: #F48700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+#blogg .wrapper main div article figure {
+  margin: 0;
+}
+#blogg .wrapper main div article figure img {
+  width: 100%;
+  max-height: 200px;
+  height: auto;
+}
+#blogg .wrapper main div article figure figcaption {
+  color: #333;
+  font-style: italic;
+  text-align: right;
+}
+#blogg .wrapper main div article p {
+  color: #ccc;
+  margin-bottom: 15px;
+  text-align: right;
+}
+#blogg .wrapper main a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #F48700;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#blogg .wrapper main a:hover {
+  background-color: #c16b00;
+}
+
+@media only screen and (min-width: 1080px) {
+  body {
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  body .wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+  body .wrapper header {
+    text-align: right;
+    background-color: #F48700;
+    height: 80px;
+    color: white;
+    padding: 20px;
+  }
+  body .wrapper header nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  body .wrapper header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+  }
+  body .wrapper header nav ul li {
+    margin-right: 70px;
+  }
+  body .wrapper header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  body .wrapper header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  body .wrapper main {
+    font-family: aloha;
+  }
 }/*# sourceMappingURL=styles.css.map */
