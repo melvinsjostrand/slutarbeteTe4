@@ -10,6 +10,7 @@ export class AuthService {
 
   async verify() {
     let role: number;
+    let roleStr: string;
     let authorizationHeader: string | null = localStorage.getItem("GUID");
     
     // Check if authorizationHeader is null
@@ -21,7 +22,7 @@ export class AuthService {
             "Authorization": authorizationHeader
           }
         });
-        let roleStr = await response.text();
+        roleStr = await response.text();
         role = parseInt(roleStr);
         console.log(role)
         if (role == 2) {
