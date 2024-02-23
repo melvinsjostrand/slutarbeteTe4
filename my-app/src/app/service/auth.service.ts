@@ -29,14 +29,22 @@ export class AuthService {
   login(loginModel:LoginModel):Observable<SingleResponseModel<TokenModel>>{
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.Url+"login",loginModel)
   }
-  register(registerModel:RegisterModel):Observable<SingleResponseModel<TokenModel>>{
+  register(registerModel:registerModel):Observable<SingleResponseModel<TokenModel>>{
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.Url+"register",registerModel)
   }
   logout() {
-    this.localStorage.clear()
-    this.onRefresh();
-    this.router.navigate(['/Index']);
-}
+      this.localStorage.clear()
+      this.onRefresh();
+      this.router.navigate(['/Index']);
+  }
+  isAuthenticated(){
+    if(this.localStorage.getItem("token")){
+      return true;
+    }
+    else{
+      return false
+    }
+  }
 
 async onRefresh() {
   this.router.routeReuseStrategy.shouldReuseRoute = function () { return false }
