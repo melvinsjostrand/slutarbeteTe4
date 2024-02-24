@@ -2,9 +2,11 @@ import  {HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { JwtModule } from '@auth0/angular-jwt';
-import { RoutePaths } from './routes';
-import { PostService } from './service/postblog.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { PostService } from './service/postblog.service';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
@@ -25,16 +27,18 @@ export function tokenGetter() {
     CreateblogComponent
   ],
   imports: [
-    RoutePaths,
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    ToastrModule,
+    BrowserAnimationsModule,
     JwtModule.forRoot({
       config:{
         tokenGetter: tokenGetter,
       }
     }),
   ],
-  providers: [provide:HTTP_INTERCEPTORS],
+  providers: [/*provide:HTTP_INTERCEPTORS*/PostService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }

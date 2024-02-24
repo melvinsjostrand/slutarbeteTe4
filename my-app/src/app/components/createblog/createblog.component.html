@@ -1,7 +1,7 @@
 <div id="create">
     <div class="wrapper">
         <main>
-            <form (ngSubmit)="onSubmit(formData.value); false">
+            <form [formGroup]="createblog">
                 <div>
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title">
@@ -9,7 +9,7 @@
                 <input type="text" id="desc" name="desc" class="inputdesc">
                 <input type="file" id="fileinput" name="hidden" class="file" >
             </div>
-                <button type="submit">Skapa blogg</button>
+                <button type="submit" (click)="onSubmit()">Skapa blogg ></button>
             </form>
         </main>
     </div>

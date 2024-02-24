@@ -1,7 +1,8 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss']
 })
-export class BlogComponent {
+export class BlogComponent{
+  constructor(private router: Router) { }
   blogs: { id: number, title: string, blogText: string, username: string, dateTimePosted: Date }[] = [
     { 
       id: 1, 
@@ -34,6 +36,7 @@ export class BlogComponent {
 
   onBlogClicked(blog: { id: any; }) {
     console.log('Blog clicked:', blog.id);
+    this.router.navigate([`blogpost/${blog.id}`]);
   }
 }
 
