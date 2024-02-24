@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 
 
 
@@ -31,15 +29,4 @@ export class AppComponent {
   title = 'my-app';
 }
 
-@NgModule({
-  declarations: [
-    // your components, directives, pipes
-  ],
-  imports: [
-    // other modules
-    HttpClientModule 
-  ],
-  providers: [],
-  bootstrap: [AppComponent] 
-})
 export class AppModule { }

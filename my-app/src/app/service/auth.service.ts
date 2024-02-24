@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 import { LoginModel } from '../models/loginModel';
 import { ResponseModel } from '../models/responseModel';
-import { SingleResponseModel } from '../models/SingleResponseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 import { registerModel } from '../models/registerModel';
 
