@@ -1,7 +1,7 @@
 export interface blog {
     id: number
     title: string
-    text: string
+    Img: string,
     time: string
     username: string
   }

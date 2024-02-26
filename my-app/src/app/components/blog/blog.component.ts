@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
+import { BlogService } from '../../service/blog.service';
+import { blog } from '../../models/blog.interface';
 
 @Component({
   selector: 'app-blog',
@@ -12,31 +14,37 @@ import { Router } from '@angular/router';
     RouterOutlet,
     RouterModule,],
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  styleUrls: ['../../../styles.scss']
 })
 export class BlogComponent{
-  constructor(private router: Router) { }
-  blogs: { id: number, title: string, blogText: string, username: string, dateTimePosted: Date }[] = [
-    { 
-      id: 1, 
-      title: "First Blog", 
-      blogText: "Lorem ipsum dolor sit amet.", 
-      username: "John Doe", 
-      dateTimePosted: new Date() // Current date and time
-    },
-    { 
-      id: 2, 
-      title: "Second Blog", 
-      blogText: "Consectetur adipiscing elit.", 
-      username: "Jane Smith", 
-      dateTimePosted: new Date() // Current date and time
-    }
-    // Add more blogs as needed
-  ];
 
-  onBlogClicked(blog: { id: any; }) {
-    console.log('Blog clicked:', blog.id);
-    this.router.navigate([`blogpost/${blog.id}`]);
+  constructor(
+    private router: Router,
+    private blogService: BlogService
+    ) { }
+  blogs: blog[] = [];
+
+
+  ngOnInit(): void {
+    this.fetchBlogs();
+  }
+
+  fetchBlogs(): void {
+    this.blogService.getBlogs()
+      .then(blogs => {
+        this.blogs = blogs;
+        console.log('Fetched blogs:', blogs);
+      })
+      .catch(error => {
+        console.error('Error fetching blogs:', error);
+        // Handle error as needed
+      });
+  }
+
+
+  onBlogClicked(blogid:number):void {
+    console.log('Blog clicked:', blogid);
+    this.router.navigate([`blogpost/${blogid}`]);
   }
 }
 

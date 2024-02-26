@@ -14,7 +14,17 @@ export class PostService {
         },
         body: JSON.stringify(data)
       });
-      return await response.json();
+
+      if (!response.ok) {
+        throw new Error('Failed to create post: ' + response.statusText);
+      }
+
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        return await response.json();
+      } else {
+        return await response.text(); // Return response as text if it's not JSON
+      }
     } catch (error) {
       console.error('Error creating post:', error);
       throw error;

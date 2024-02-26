@@ -2,11 +2,15 @@ import  {HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { JwtModule } from '@auth0/angular-jwt';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { PostService } from './service/postblog.service';
+import { BlogService } from './service/blog.service';
+
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
@@ -26,11 +30,20 @@ export function tokenGetter() {
     BlogComponent,
     CreateblogComponent
   ],
+
   imports: [
+    RouterOutlet,
+    RouterModule,
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ToastrModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: "toast-top-right",
+      preventDuplicates: true,
+    }),
     BrowserAnimationsModule,
     JwtModule.forRoot({
       config:{
@@ -38,7 +51,9 @@ export function tokenGetter() {
       }
     }),
   ],
-  providers: [/*provide:HTTP_INTERCEPTORS*/PostService],
+  providers: [
+  PostService,
+  BlogService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }

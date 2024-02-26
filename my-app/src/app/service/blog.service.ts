@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import{blog} from  '../components/blog/blog.interface';
+import { blog } from '../models/blog.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
-  getBlog() {
-    throw new Error('Method not implemented.');
-  }
-  private blogUrl = 'https://localhost:7063/Blog'; 
+  private blogUrl = 'https://localhost:7063/Blog';
 
-  constructor(private http: HttpClient) {}
+  async getBlogs(): Promise<blog[]> {
+    try {
+      const response = await fetch(`${this.blogUrl}/AllBlog`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch blogs: ' + response.statusText);
+      }
 
-  getBlogs(): Observable<any[]> {
-    return this.http.get<blog[]>(`${this.blogUrl}/AllBlog`);
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        return await response.json();
+      } else {
+        throw new Error('Failed to fetch blogs: Invalid response format');
+      }
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
+      throw error;
+    }
   }
+
+
 }

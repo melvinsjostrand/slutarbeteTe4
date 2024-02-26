@@ -40,9 +40,15 @@ header {
   body{
     font-family: AustieBost;
   }
+  button{
+    font-family: AustieBost;
+  }
+  a{
+    font-family: AustieBost;
+  }
 
 
-  #blogg {
+  #blog {
     .wrapper {
       main {
         div {
@@ -53,12 +59,12 @@ header {
           padding: 20px;
           article {
             background-color: #A37319;
-            border: 1px solid #ccc;
+            border: 1px solid #FFF;
             border-radius: 8px;
             margin: 20px 0;
             padding: 20px;
             h2 {
-              color: #F48700;
+              color: #FFF;
               margin-bottom: 10px;
               text-align: center;
             }
@@ -70,13 +76,13 @@ header {
                 height: auto;
               }
               figcaption {
-                color: #333;
+                color: #000;
                 font-style: italic;
                 text-align: right;
               }
             }
             p {
-              color: #ccc;
+              color: #FFF;
               margin-bottom: 15px;
               text-align: right;
             }
@@ -90,11 +96,57 @@ header {
           height: 25px;
           border-radius: 25px;
           background-color: #F48700;
-          color: white;
+          color: #FFF;
           border: none;
           cursor: pointer;
           transition: background-color 0.3s;
 
+          &:hover {
+            background-color: darken(#F48700, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  #create {
+    .wrapper {
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        label {
+          margin-top: 10px;
+          font-weight: bold;
+          font-family: Animal-Paw;
+        }
+        input,
+        select {
+          width: 100%;
+          padding: 10px;
+          margin: 5px 0;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-family: AustieBost;
+        }
+        .file {
+          margin-top: 10px;
+        }
+        button {
+          width: 100%;
+          padding: 15px;
+          margin-top: 20px;
+          background-color: #F48700;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+  
           &:hover {
             background-color: darken(#F48700, 10%);
           }

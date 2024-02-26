@@ -6,9 +6,10 @@ import { ProductComponent } from './components/product/product.component';
 import { IndexComponent } from './components/index/index.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { CreateblogComponent } from './components/createblog/createblog.component';
+import { BlogpostComponent } from './components/blogpost/blogpost.component';
 
 const routeConfig: Routes = [
-    { path: 'blog/:id', component: BlogComponent },
+    { path: 'blogpost/:id', component: BlogpostComponent, title: 'Blog Post' },
     { path: '', component: IndexComponent, title: 'Startsida'},
     { path: 'index', component: IndexComponent, title: 'Startsida'},
     { path: 'product', component: ProductComponent, title: 'product'},

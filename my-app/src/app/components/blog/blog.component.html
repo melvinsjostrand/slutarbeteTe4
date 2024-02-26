@@ -2,14 +2,15 @@
     <div class="wrapper">
         <main>
             <div>
-            <article *ngFor="let blog of blogs" (click)="onBlogClicked(blog)">
+            <article *ngFor="let blog of blogs" (click)="onBlogClicked(blog.id)">
                 <figure>
-                    <img src="" alt="">
+                    <img [src]="blog.Img" alt="{blog.title}"/>
                     <figcaption>
                         {{blog.username}}
                     </figcaption>
                 </figure>
-                <p>{{blog.dateTimePosted}}</p>
+                <small>{{ blog.time }}</small>
+                <h2>{{ blog.title }}</h2>
             </article>
             </div>
                 <a [routerLink]="['createblog']">createblog</a>

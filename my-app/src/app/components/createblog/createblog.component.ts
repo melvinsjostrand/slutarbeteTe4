@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
 import { PostService } from '../../service/postblog.service';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-createblog',
+  standalone: true,
+  imports:[
+    ReactiveFormsModule,
+    FormsModule,
+    ],
   templateUrl: './createblog.component.html',
-  styleUrls: ['./createblog.component.scss']
+  styleUrls: ['../../../styles.scss']
 })
 export class CreateblogComponent implements OnInit {
   createblog!: FormGroup;
@@ -14,34 +19,51 @@ export class CreateblogComponent implements OnInit {
   constructor(
     private postService: PostService,   
     private formBuilder: FormBuilder,
-    private toastrService: ToastrService,
   ) { }
 
   ngOnInit(): void {
-    this.createblogForm();
-  }
-
-  createblogForm(): void {
     this.createblog = this.formBuilder.group({
       title: ['', Validators.required],
       desc: ['', Validators.required],
-      img: ['']
+      img: [null, Validators.required]
     });
   }
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    this.convertFileToBase64(file);
+  }
 
+
+  convertFileToBase64(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.createblog.patchValue({
+        img: reader.result 
+      });
+    };
+    reader.readAsDataURL(file);
+  }
+  
   onSubmit(): void {
     try {
       if (this.createblog.valid) {
         const formData = this.createblog.value;
-        const response = this.postService.createPost(formData);
-        console.log('Post created:', response);
-        this.toastrService.success('Blog post created successfully.');
+        this.postService.createPost(formData).then(
+          response => {
+            console.log('Post created:', response);
+
+          },
+          error => {
+            console.error('Error creating post:', error);
+           
+          }
+        );
       } else {
-        this.toastrService.error('Please fill in all required fields.');
+
       }
     } catch (error) {
       console.error('Error creating post:', error);
-      this.toastrService.error('An error occurred while creating the blog post.');
+
     }
   }
 }

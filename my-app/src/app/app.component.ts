@@ -4,7 +4,8 @@ import { RouterModule } from '@angular/router';
 
 
 
-import {NavComponent } from "./components/nav/nav.component";
+
+import { NavComponent } from './components/nav/nav.component';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +14,10 @@ import {NavComponent } from "./components/nav/nav.component";
     RouterModule,
     NavComponent],
   template: `
-  <body>
-  <div class=wrapper>
-  <app-nav></app-nav>
-  <div>
+  <app-nav> </app-nav>
+  <section class="content">
   <router-outlet></router-outlet>
-  </div>
-</div>
-</body>
+</section>
 `,
   styleUrl: '../styles.scss'
 })
@@ -28,5 +25,3 @@ import {NavComponent } from "./components/nav/nav.component";
 export class AppComponent {
   title = 'my-app';
 }
-
-export class AppModule { }
