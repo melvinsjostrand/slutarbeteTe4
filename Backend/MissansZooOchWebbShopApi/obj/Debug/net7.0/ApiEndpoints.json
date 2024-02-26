@@ -1,0 +1,504 @@
+[
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.BlogController",
+    "Method": "CreateBlog",
+    "RelativePath": "Blog",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blog",
+        "Type": "MissansZooOchWebbShopApi.Blog",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.BlogController",
+    "Method": "GetBlogFromId",
+    "RelativePath": "Blog/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MissansZooOchWebbShopApi.Blog",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.BlogController",
+    "Method": "GetAllBlogs",
+    "RelativePath": "Blog/AllBlog",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MissansZooOchWebbShopApi.Blog, MissansZooOchWebbShopApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.BlogController",
+    "Method": "DeleteBlogAdmin",
+    "RelativePath": "Blog/DeleteBlogAdmin",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blog",
+        "Type": "MissansZooOchWebbShopApi.Blog",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.BlogController",
+    "Method": "GetAllBlogFromUserId",
+    "RelativePath": "Blog/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MissansZooOchWebbShopApi.Blog",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.CartController",
+    "Method": "AddToCart",
+    "RelativePath": "Cart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "MissansZooOchWebbShopApi.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.CartController",
+    "Method": "ChangeAmount",
+    "RelativePath": "Cart",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cart",
+        "Type": "MissansZooOchWebbShopApi.cart",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.CartController",
+    "Method": "DeleteCart",
+    "RelativePath": "Cart",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cart",
+        "Type": "MissansZooOchWebbShopApi.cart",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.CartController",
+    "Method": "GetCart",
+    "RelativePath": "Cart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MissansZooOchWebbShopApi.cart",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.CommentController",
+    "Method": "PostComment",
+    "RelativePath": "Comment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "comment",
+        "Type": "MissansZooOchWebbShopApi.Comment",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.CommentController",
+    "Method": "GetComment",
+    "RelativePath": "Comment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "blogId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MissansZooOchWebbShopApi.Comment",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "CreateProduct",
+    "RelativePath": "Product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "MissansZooOchWebbShopApi.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "DeleteProduct",
+    "RelativePath": "Product",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "MissansZooOchWebbShopApi.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "GetAllProducts",
+    "RelativePath": "Product/AllProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MissansZooOchWebbShopApi.Product, MissansZooOchWebbShopApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "GetProductByCategory",
+    "RelativePath": "Product/Category/{category}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MissansZooOchWebbShopApi.Product",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "ChangeRating",
+    "RelativePath": "Product/ChangeRating",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "MissansZooOchWebbShopApi.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "GetProductSortedByPrice",
+    "RelativePath": "Product/Price",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MissansZooOchWebbShopApi.Product",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "GetProductId",
+    "RelativePath": "Product/ProductId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MissansZooOchWebbShopApi.Product, MissansZooOchWebbShopApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "GetProductSortedByName",
+    "RelativePath": "Product/ProductName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MissansZooOchWebbShopApi.Product",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "UpdateProduct",
+    "RelativePath": "Product/UpdateProduct",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "MissansZooOchWebbShopApi.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.LoginController",
+    "Method": "CreateUser",
+    "RelativePath": "User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "MissansZooOchWebbShopApi.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.LoginController",
+    "Method": "Delete",
+    "RelativePath": "User",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "MissansZooOchWebbShopApi.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.LoginController",
+    "Method": "GetUser",
+    "RelativePath": "User/AllUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "MissansZooOchWebbShopApi.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.LoginController",
+    "Method": "Changepassword",
+    "RelativePath": "User/Changepassword",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "MissansZooOchWebbShopApi.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.LoginController",
+    "Method": "UpdateRole",
+    "RelativePath": "User/ChangeRole",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "User/Login",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.LoginController",
+    "Method": "Logout",
+    "RelativePath": "User/Logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.LoginController",
+    "Method": "password",
+    "RelativePath": "User/password",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.LoginController",
+    "Method": "Verify",
+    "RelativePath": "User/Verify",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
