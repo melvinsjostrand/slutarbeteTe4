@@ -1,1 +1,12 @@
-
+<!-- login.component.html -->
+<div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <label for="mail">mail:</label>
+        <input type="text" id="mail" formControlName="mail">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  

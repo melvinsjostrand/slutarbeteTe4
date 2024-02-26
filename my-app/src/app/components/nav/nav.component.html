@@ -13,15 +13,11 @@
             <li>
                 <a [routerLink]="['product']">product</a>
             </li>
-            <li *ngIf="role === 2"><a routerLink="/admin">Admin Panel</a></li>
-            <li *ngIf="role === 1"><a routerLink="/user">User Panel</a></li>
+           <!-- <li *ngIf="role === 2"><a routerLink="/admin">Admin Panel</a></li>
+            <li *ngIf="role === 1"><a routerLink="/user">User Panel</a></li>-->
 
-            <li *ngIf="!isAuthenticated()">
-                <a (click)="login()">Logga in</a>
-            </li>
-            <li *ngIf="isAuthenticated()">
-                <a (click)="logout()">Logga ut</a>
-            </li>
+            <li *ngIf="!isAuthenticated"><a routerLink="login">Logga in</a></li>
+            <li *ngIf="isAuthenticated"><a (click)="logout()">Logga ut</a></li>
         </ul>
     </nav>
     

@@ -2,7 +2,7 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
+import { AuthService } from '../../service/auth.service';
 @Component({
   selector: 'app-nav',
   standalone: true,
@@ -10,30 +10,19 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     RouterOutlet,
     RouterModule,],
-  template: `<header>
-  <div>
-  <h1>skapa blogg - Webbshop</h1>
-  <div>
-  <nav>
-      <ul>
-          <li>
-              <a [routerLink]="['index']">startsida</a>
-          </li>
-          <li>
-              <a [routerLink]="['blog']">blogg</a>
-          </li>
-          <li>
-              <a [routerLink]="['product']">product</a>
-          </li>
-      </ul>
-  </nav>
-</div>
-<div>
-</div>
-</div>
-</header>
-`,
+templateUrl: "./nav.component.html",
 styleUrl: './nav.component.scss'
 })
 export class NavComponent {
+    isAuthenticated: boolean = false;
+
+    constructor(private authService: AuthService) { }
+  
+    ngOnInit(): void {
+      this.isAuthenticated = this.authService.isAuthenticated();
+    }
+  
+    logout(): void {
+      this.authService.logout();
+    }
 }

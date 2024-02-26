@@ -1,1 +1,23 @@
-<p>product works!</p>
+<div id="product">
+    <div class="wrapper">
+        <div>
+
+        <article *ngFor="let product of products">
+            <figure>
+                <figcaption>
+                    <img [src]="product.Img" alt={{product.name}}/>
+                    {{product.name}}
+                </figcaption>
+            </figure>
+            <h3>Category {{product.category}}</h3>
+            <p>Priset är {{product.price}}</p>
+            <p>{{product.description}}</p>
+            <p>i lager: {{product.stock}}</p>
+            <p>{{product.feeding}}</p>
+            <p>⭐ {{product.rating}}</p>
+            <p>artikelnummer {{product.id}}</p>
+            <button (click)="onClicked(product.id)">Add to Cart</button>
+        </article>
+    </div>
+</div>
+</div>

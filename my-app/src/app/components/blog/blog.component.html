@@ -4,7 +4,7 @@
             <div>
             <article *ngFor="let blog of blogs" (click)="onBlogClicked(blog.id)">
                 <figure>
-                    <img [src]="blog.Img" alt="{blog.title}"/>
+                    <img [src]="blog.Img" alt={{blog.title}}/>
                     <figcaption>
                         {{blog.username}}
                     </figcaption>

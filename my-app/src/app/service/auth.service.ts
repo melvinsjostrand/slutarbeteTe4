@@ -1,57 +1,85 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LocalStorageService } from './local-storage-service.service';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { Observable } from 'rxjs';
-
-
-import { LoginModel } from '../models/loginModel';
-import { ResponseModel } from '../models/responseModel';
-import { SingleResponseModel } from '../models/singleResponseModel';
-import { TokenModel } from '../models/tokenModel';
-import { registerModel } from '../models/registerModel';
+import { Token } from '@angular/compiler';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  Url="https://localhost:7063/";
-
+  private baseUrl = 'https://localhost:7063/';
+  
   constructor(
-    private httpClient:HttpClient,
     private router: Router,
-    private jwtHelper: JwtHelperService,
-    private localStorage:LocalStorageService
-  ) { }
-  login(loginModel:LoginModel):Observable<SingleResponseModel<TokenModel>>{
-    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.Url+"login",loginModel)
-  }
-  register(registerModel:registerModel):Observable<SingleResponseModel<TokenModel>>{
-    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.Url+"register",registerModel)
-  }
-  logout() {
-      this.localStorage.clear()
-      this.onRefresh();
-      this.router.navigate(['/Index']);
-  }
-  isAuthenticated(){
-    if(this.localStorage.getItem("token")){
-      return true;
-    }
-    else{
-      return false
-    }
+    private localStorage: LocalStorageService 
+    ) {}
+  login(mail: string, password: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const url = `${this.baseUrl}User/Login`;
+      const credentials = btoa(`${mail}:${password}`);
+      const options = {
+        method: 'GET',
+        headers: {
+          'Authorization': "Basic " + credentials
+        },
+      };
+
+      fetch(url, options)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to perform request: ' + response.statusText);
+          }
+          let text = response.text();
+          return text;
+        })
+        .then(Token => {
+          console.log(Token);
+            localStorage.setItem("user", Token);
+            return Token; 
+        })
+        .catch(error => {
+          console.error('Login failed:', error);
+          throw new Error('Failed to parse response: ' + error.message);
+        });
+    });
   }
 
-async onRefresh() {
-  this.router.routeReuseStrategy.shouldReuseRoute = function () { return false }
-  const currentUrl = this.router.url + '?'
-  return this.router.navigateByUrl(currentUrl).then(() => {
-    this.router.navigated = false
-    this.router.navigate([this.router.url])
-  })
+
+  /*async register(registerModel: registerModel): Promise<SingleResponseModel<TokenModel>> {
+    try {
+      const response = await fetch(`${this.url}/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(registerModel)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to register: ' + response.statusText);
+      }
+
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        return await response.json();
+      } else {
+        throw new Error('Failed to register: Invalid response format');
+      }
+    } catch (error) {
+      console.error('Error registering:', error);
+      throw error;
+    }
+  }
+*/
+
+logout(): void {
+  localStorage.removeItem('token');
+  this.router.navigate(['/Index']);
 }
+
+isAuthenticated(): boolean {
+  return !!localStorage.getItem('token');
+}
+  
 }
