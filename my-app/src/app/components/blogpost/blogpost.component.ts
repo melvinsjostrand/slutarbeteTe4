@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BlogService } from '../../service/blog.service';
 
 @Component({
   selector: 'app-blogpost',
@@ -13,28 +14,26 @@ export class BlogpostComponent implements OnInit {
   username!: string;
   dateTimePosted!: Date; 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(    
+    private activatedRoute: ActivatedRoute,
+    private blogService: BlogService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.blogId = +params['id']; 
-
-      this.getBlogPostDetails(this.blogId);
+    this.activatedRoute.params.subscribe(params => {
+      const blogid = +params['blogid'];
+      if (blogid) {
+        this.fetchBlogPost(blogid);
+      }
     });
   }
-
-  // Function to fetch the details of the selected blog post
-  getBlogPostDetails(blogId: number) {
-    if (blogId === 1) {
-      this.blogTitle = "First Blog";
-      this.blogText = "Lorem ipsum dolor sit amet.";
-      this.username = "John Doe";
-      this.dateTimePosted = new Date();
-    } else if (blogId === 2) {
-      this.blogTitle = "Second Blog";
-      this.blogText = "Consectetur adipiscing elit.";
-      this.username = "Jane Smith";
-      this.dateTimePosted = new Date();
-    }
+  fetchBlogPost(blogid: number): void {
+    this.blogService.fetchBlogPost(blogid)
+      .then(blogPost => {
+        console.log('Fetched blog post:', blogPost);
+      })
+      .catch(error => {
+        console.error('Error fetching blog post:', error);
+      });
   }
+
 }

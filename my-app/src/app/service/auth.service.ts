@@ -42,6 +42,7 @@ export class AuthService {
           console.error('Login failed:', error);
           throw new Error('Failed to parse response: ' + error.message);
         });
+        this.router.navigate(['/']);
     });
   }
 
@@ -74,12 +75,12 @@ export class AuthService {
 */
 
 logout(): void {
-  localStorage.removeItem('token');
-  this.router.navigate(['/Index']);
+  localStorage.removeItem('user'); 
+  this.router.navigate(['/']);
 }
 
 isAuthenticated(): boolean {
-  return !!localStorage.getItem('token');
+  return !!localStorage.getItem('user');
 }
   
 }

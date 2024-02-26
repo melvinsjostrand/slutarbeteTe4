@@ -16,8 +16,14 @@
            <!-- <li *ngIf="role === 2"><a routerLink="/admin">Admin Panel</a></li>
             <li *ngIf="role === 1"><a routerLink="/user">User Panel</a></li>-->
 
-            <li *ngIf="!isAuthenticated"><a routerLink="login">Logga in</a></li>
-            <li *ngIf="isAuthenticated"><a (click)="logout()">Logga ut</a></li>
+            <li *ngIf="isLoggedIn(); else loginButton">
+                <a (click)="logout()">Logout</a>
+            </li>
+              <ng-template #loginButton>
+                <li>
+                <a [routerLink]="['/login']">Login</a>
+            </li>
+              </ng-template>
         </ul>
     </nav>
     

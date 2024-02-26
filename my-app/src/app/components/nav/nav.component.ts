@@ -22,6 +22,11 @@ export class NavComponent {
       this.isAuthenticated = this.authService.isAuthenticated();
     }
   
+
+    isLoggedIn(): boolean {
+      return this.authService.isAuthenticated();
+    }
+  
     logout(): void {
       this.authService.logout();
     }

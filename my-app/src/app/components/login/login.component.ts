@@ -35,13 +35,11 @@ export class LoginComponent implements OnInit {
     const { mail, password } = this.loginForm.value;
     this.authService.login(mail, password)
       .then(() => {
-        // Redirect user to dashboard or desired route upon successful login
         this.loginError = null;
-        console.log("hej");
       })
       .catch((error: any) => {
         console.error('Login failed:', error);
-        this.loginError = 'Invalid username or password'; // Set appropriate error message
+        this.loginError = 'Invalid username or password';
       });
   }
 

@@ -27,4 +27,14 @@ export class BlogService {
       throw error;
     }
   }
+  fetchBlogPost(blogid: number): Promise<any> {
+    const url = `${this.blogUrl}/blogpost/${blogid}`;
+    return fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch blog post');
+        }
+        return response.json();
+      });
+  }
 }
