@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './index.component.html',
-  styleUrl: './index.component.scss'
+  styleUrls: ['../../../styles.scss']
 })
 export class IndexComponent {
 

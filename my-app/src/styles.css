@@ -1,10 +1,10 @@
 @font-face {
-  font-family: AustieBost;
-  src: url(./AustieBostKittenKlub.ttf);
-}
-@font-face {
   font-family: Animal-Paw;
   src: url(./Animal-Paw.ttf);
+}
+@font-face {
+  font-family: AustieBost;
+  src: url(./AustieBostKittenKlub.ttf);
 }
 body {
   font-family: AustieBost;
@@ -18,16 +18,12 @@ body .wrapper {
 }
 body .wrapper header {
   text-align: center;
-  grid-area: head;
   background-color: #F48700;
   height: 100%;
   color: #FFF;
 }
 body .wrapper header h1 {
   display: none;
-}
-body .wrapper header nav {
-  height: 100%;
 }
 body .wrapper header nav ul {
   list-style: none;
@@ -36,15 +32,13 @@ body .wrapper header nav ul {
 }
 body .wrapper header nav ul li a {
   font-size: 30px;
-  text-align: center;
   text-decoration: none;
   color: #FFF;
   font-weight: bold;
 }
-body .wrapper button {
-  font-family: AustieBost;
-}
-body .wrapper a {
+body .wrapper button,
+body .wrapper a,
+body .wrapper p {
   font-family: AustieBost;
 }
 
@@ -180,8 +174,5 @@ body .wrapper a {
   }
   header nav ul li a:hover {
     text-decoration: underline;
-  }
-  main {
-    font-family: aloha;
   }
 }/*# sourceMappingURL=styles.css.map */
