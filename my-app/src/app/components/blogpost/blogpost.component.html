@@ -1,27 +1,14 @@
 <main>
   <div>
-    <article *ngFor="let blog of blogs">
+    <article *ngIf="blogs && blogs.length > 1">
       <figure>
-        <img src="" alt="">
+        <img [src]="blogs[0].Img" alt={{blogs[0].title}} />
         <figcaption>
-
+          {{blogs[0].username}}
         </figcaption>
       </figure>
-
-      <p>
-
-      </p>
-      <h3>
-
-      </h3>
-      <p>
-
-      </p>
+      <small>{{ blogs[0].time }}</small>
+      <h2>{{ blogs[0].title }}</h2>
     </article>
-  </div>
-  <div *ngFor="let comment of blogPost.comments">
-    <p>{{ comment.text }}</p>
-    <p>Posted by: {{ comment.username }}</p>
-    <p>Time: {{ comment.time }}</p>
   </div>
 </main>

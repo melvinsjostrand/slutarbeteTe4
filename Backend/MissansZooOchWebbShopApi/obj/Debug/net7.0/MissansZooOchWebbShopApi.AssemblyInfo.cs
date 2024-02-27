@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MissansZooOchWebbShopApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4960fa3744553881b451943c72464e5b4dce467a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MissansZooOchWebbShopApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MissansZooOchWebbShopApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

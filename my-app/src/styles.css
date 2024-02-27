@@ -6,41 +6,45 @@
   font-family: Animal-Paw;
   src: url(./Animal-Paw.ttf);
 }
-header {
+body {
+  font-family: AustieBost;
+  background-color: #E5CF8C;
+  margin: 0;
+  padding: 0;
+}
+body .wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+body .wrapper header {
   text-align: center;
   grid-area: head;
   background-color: #F48700;
   height: 100%;
-  color: white;
+  color: #FFF;
 }
-header h1 {
+body .wrapper header h1 {
   display: none;
 }
-header nav {
+body .wrapper header nav {
   height: 100%;
 }
-header nav ul {
+body .wrapper header nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-header nav ul li a {
+body .wrapper header nav ul li a {
   font-size: 30px;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: #FFF;
   font-weight: bold;
 }
-
-body {
+body .wrapper button {
   font-family: AustieBost;
 }
-
-button {
-  font-family: AustieBost;
-}
-
-a {
+body .wrapper a {
   font-family: AustieBost;
 }
 
@@ -52,8 +56,8 @@ a {
   padding: 20px;
 }
 #blog .wrapper main div article {
-  background-color: #A37319;
-  border: 1px solid #FFF;
+  background-color: #F48700;
+  border: 2px solid #A37319;
   border-radius: 8px;
   margin: 20px 0;
   padding: 20px;
@@ -98,13 +102,16 @@ a {
   background-color: #c16b00;
 }
 
+#create .wrapper h1 {
+  text-align: center;
+}
 #create .wrapper form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 50px auto;
   padding: 20px;
-  background-color: white;
+  background-color: #E5CF8C;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -118,7 +125,7 @@ a {
   width: 100%;
   padding: 10px;
   margin: 5px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #FFF;
   border-radius: 4px;
   font-family: AustieBost;
 }
@@ -130,7 +137,7 @@ a {
   padding: 15px;
   margin-top: 20px;
   background-color: #F48700;
-  color: white;
+  color: #FFF;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -140,30 +147,21 @@ a {
 }
 
 @media only screen and (min-width: 1080px) {
-  body {
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  body .wrapper {
-    width: 100%;
-    margin: 0 auto;
-  }
-  body .wrapper header {
+  header {
     text-align: right;
     background-color: #F48700;
     height: 80px;
     color: white;
     padding: 20px;
   }
-  body .wrapper header nav {
+  header nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     justify-content: center;
     align-items: center;
     height: 100px;
   }
-  body .wrapper header nav ul {
+  header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -172,18 +170,18 @@ a {
     align-items: center;
     height: 100%;
   }
-  body .wrapper header nav ul li {
+  header nav ul li {
     margin-right: 70px;
   }
-  body .wrapper header nav ul li a {
+  header nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
   }
-  body .wrapper header nav ul li a:hover {
+  header nav ul li a:hover {
     text-decoration: underline;
   }
-  body .wrapper main {
+  main {
     font-family: aloha;
   }
 }/*# sourceMappingURL=styles.css.map */

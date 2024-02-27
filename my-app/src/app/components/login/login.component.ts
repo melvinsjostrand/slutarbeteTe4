@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrls: ['../../../styles.scss']
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;

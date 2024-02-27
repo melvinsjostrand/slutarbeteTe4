@@ -13,12 +13,7 @@ import { NavComponent } from './components/nav/nav.component';
   imports: [RouterOutlet,
     RouterModule,
     NavComponent],
-  template: `
-  <app-nav> </app-nav>
-  <section class="content">
-  <router-outlet></router-outlet>
-</section>
-`,
+  templateUrl: './app.component.html',
   styleUrl: '../styles.scss'
 })
 

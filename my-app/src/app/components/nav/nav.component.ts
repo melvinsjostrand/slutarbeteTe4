@@ -11,23 +11,37 @@ import { AuthService } from '../../service/auth.service';
     RouterOutlet,
     RouterModule,],
 templateUrl: "./nav.component.html",
-styleUrl: './nav.component.scss'
+styleUrls: ['../../../styles.scss']
 })
 export class NavComponent {
-    isAuthenticated: boolean = false;
-
+    isAuthenticated: boolean = false
+    userRole: string | undefined;
     constructor(private authService: AuthService) { }
   
     ngOnInit(): void {
-      this.isAuthenticated = this.authService.isAuthenticated();
-    }
-  
+        this.isAuthenticated = this.authService.isAuthenticated();
+        this.setUserRole();
+      }
 
     isLoggedIn(): boolean {
-      return this.authService.isAuthenticated();
+        return this.authService.isAuthenticated();
     }
-  
+
+    async setUserRole(): Promise<void> {
+        if (this.isAuthenticated) {
+          try {
+            await this.authService.verify();
+            this.userRole = this.authService.getUserRole();
+            console.log('User role:', this.userRole);
+          } catch (error) {
+            console.error('Failed to verify user role:', error);
+          }
+        }
+      }
+
+
     logout(): void {
       this.authService.logout();
+      this.isAuthenticated = false;
     }
 }

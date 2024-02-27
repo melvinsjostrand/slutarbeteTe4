@@ -60,7 +60,7 @@ namespace MissansZooOchWebbShopApi.Controllers
             string fileType = base64.Split(",")[0].Split("/")[1].Split(";")[0];
             byte[] imageData = Convert.FromBase64String(base64.Split(",")[1]);
             string uniqueFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + "_" + GenerateRandomString(8);
-            string path = "../../my-app/src/img" + uniqueFileName + "." + fileType;
+            string path = "../../my-app/src/app/img/" + uniqueFileName + "." + fileType;
             System.IO.File.WriteAllBytes(path, imageData);
 
             return path;

@@ -1,13 +1,13 @@
-<div id="product">
+<div id="blog">
     <div class="wrapper">
+      <main>
         <div>
-
-        <article *ngFor="let product of products">
+          <article *ngFor="let product of products">
             <figure>
-                <figcaption>
-                    <img [src]="product.Img" alt={{product.name}}/>
-                    {{product.name}}
-                </figcaption>
+              <figcaption>
+                <img [src]="product.Img" alt={{product.name}} />
+                {{product.name}}
+              </figcaption>
             </figure>
             <h3>Category {{product.category}}</h3>
             <p>Priset är {{product.price}}</p>
@@ -17,7 +17,8 @@
             <p>⭐ {{product.rating}}</p>
             <p>artikelnummer {{product.id}}</p>
             <button (click)="onClicked(product.id)">Add to Cart</button>
-        </article>
+          </article>
+        </div>
+      </main>
     </div>
-</div>
-</div>
+  </div>

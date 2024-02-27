@@ -1,32 +1,30 @@
 <header>
-    <div>
     <h1>skapa blogg - Webbshop</h1>
-    <div>
     <nav>
-        <ul>
-            <li>
-                <a [routerLink]="['index']">startsida</a>
-            </li>
-            <li>
-                <a [routerLink]="['blog']">blogg</a>
-            </li>
-            <li>
-                <a [routerLink]="['product']">product</a>
-            </li>
-           <!-- <li *ngIf="role === 2"><a routerLink="/admin">Admin Panel</a></li>
-            <li *ngIf="role === 1"><a routerLink="/user">User Panel</a></li>-->
-
-            <li *ngIf="isLoggedIn(); else loginButton">
-                <a (click)="logout()">Logout</a>
-            </li>
-              <ng-template #loginButton>
-                <li>
-                <a [routerLink]="['/login']">Login</a>
-            </li>
-              </ng-template>
-        </ul>
+      <ul>
+        <li>
+          <a [routerLink]="['index']">startsida</a>
+        </li>
+        <li>
+          <a [routerLink]="['blog']">blogg</a>
+        </li>
+        <li>
+          <a [routerLink]="['product']">product</a>
+        </li>
+        <li *ngIf="isLoggedIn(); else loginButton">
+          <a (click)="logout()">Logout</a>
+        </li>
+        <ng-template #loginButton>
+          <li>
+            <a [routerLink]="['/login']">Login</a>
+          </li>
+        </ng-template>
+        <li *ngIf="userRole === 'user'">
+          <a routerLink="/user">User Panel</a>
+        </li>
+        <li *ngIf="userRole === 'admin'">
+          <a routerLink="/admin">Admin Panel</a>
+        </li>
+      </ul>
     </nav>
-    
-  </div>
-  </div>
   </header>

@@ -28,7 +28,7 @@ export class BlogService {
     }
   }
   fetchBlogPost(blogid: number): Promise<any> {
-    const url = `${this.blogUrl}/blogpost/${blogid}`;
+    const url = `${this.blogUrl}/${blogid}`;
     return fetch(url)
       .then(response => {
         if (!response.ok) {

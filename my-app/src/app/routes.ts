@@ -8,6 +8,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { CreateblogComponent } from './components/createblog/createblog.component';
 import { BlogpostComponent } from './components/blogpost/blogpost.component';
 import { LoginComponent } from './components/login/login.component';
+
 const routeConfig: Routes = [
     { path: 'blogpost/:id', component: BlogpostComponent, title: 'Blog Post' },
     { path: '', component: IndexComponent, title: 'Startsida'},

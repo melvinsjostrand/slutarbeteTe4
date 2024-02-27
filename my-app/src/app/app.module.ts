@@ -18,10 +18,6 @@ import { IndexComponent } from './components/index/index.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { CreateblogComponent } from './components/createblog/createblog.component';
 
-export function tokenGetter() {
-  return localStorage.getItem("token");
-}
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,11 +41,6 @@ export function tokenGetter() {
       preventDuplicates: true,
     }),
     BrowserAnimationsModule,
-    JwtModule.forRoot({
-      config:{
-        tokenGetter: tokenGetter,
-      }
-    }),
   ],
   providers: [
   PostService,

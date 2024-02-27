@@ -13,7 +13,7 @@ import { product } from '../../models/product';
     RouterOutlet,
     RouterModule],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.scss'
+  styleUrls: ['../../../styles.scss']
 })
 export class ProductComponent {
   constructor(
