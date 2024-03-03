@@ -1,13 +1,18 @@
 <div id="create">
     <div class="wrapper">
       <main>
+        <h2>Skapa konto</h2>
         <form action="">
-          <label for="title">Title</label>
-          <input type="text" name="title" id="title">
-          <label for="desc" class="labeldesc">Blogg text </label>
-          <input type="text" id="desc" name="desc" class="inputdesc">
-          <input type="file" id="fileinput" name="hidden" class="file">
-          <button type="submit">Skapa blogg</button>
+            <label for="username">Användarnamn</label>
+            <input type="text" name="username" id="username">
+            <label for="mail">Mail</label>
+            <input type="email" name="mail" id="mail">
+            <label for="password">Lösenord</label>
+            <input type="password" name="password" id="password">
+            <label for="address">address</label>
+            <input type="text" name="address" id="address">
+            <button type="submit">Skapa konto</button>
+            <span id="error"></span>
         </form>
       </main>
     </div>
