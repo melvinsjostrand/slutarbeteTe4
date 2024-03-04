@@ -30,7 +30,6 @@ export class BlogComponent {
       })
       .catch((error) => {
         console.error("Error fetching blogs:", error);
-        // Handle error as needed
       });
   }
 
@@ -39,9 +38,3 @@ export class BlogComponent {
     this.router.navigate([`blogpost/${blogid}`]);
   }
 }
-
-@NgModule({
-  declarations: [],
-  imports: [CommonModule],
-})
-export class BlogModule {}

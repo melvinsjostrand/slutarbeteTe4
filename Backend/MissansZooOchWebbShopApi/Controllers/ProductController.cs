@@ -89,6 +89,27 @@ namespace MissansZooOchWebbShopApi.Controllers
             }
             return StatusCode(200, "product har tagits bort");
         }
+
+        [HttpDelete("userblog")]
+        public ActionResult DeleteProduct(User user)
+        {
+            try
+            {
+                connection.Open();
+                MySqlCommand query = connection.CreateCommand();
+                query.Prepare();
+                query.CommandText = "DELETE FROM product WHERE userId = @userId";
+                query.Parameters.AddWithValue("@userId", user.Id);
+
+                MySqlDataReader data = query.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "något blev fel");
+            }
+            return StatusCode(200, "product borta");
+        }
+
         [HttpPut("ChangeRating")]
         public ActionResult ChangeRating(Product product) 
         {

@@ -133,6 +133,25 @@ namespace MissansZooOchWebbShopApi.Controllers
             }
             return Ok(blog);
         }
+
+        [HttpDelete("userblog")]
+        public ActionResult DeleteBlog(User user)
+        {
+            try
+            {
+                connection.Open();
+                MySqlCommand query = connection.CreateCommand();
+                query.Prepare();
+                query.CommandText = "DELETE FROM blog WHERE userId = @userId";
+                query.Parameters.AddWithValue("@userId", user.Id);
+
+                MySqlDataReader data = query.ExecuteReader();
+            }catch(Exception ex)
+            {
+                return StatusCode(500, "något blev fel");
+            }
+            return StatusCode(200, "blog borta");
+        }
         [HttpGet("{Id}")]
         public ActionResult<Blog> GetBlogFromId(int Id)
         {

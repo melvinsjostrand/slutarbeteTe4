@@ -1,14 +1,18 @@
-<main>
-  <div>
-    <article *ngIf="blogs && blogs.length > 1">
-      <figure>
-        <img [src]="blogs[0].Img" alt={{blogs[0].title}} />
-        <figcaption>
-          {{blogs[0].username}}
-        </figcaption>
-      </figure>
-      <small>{{ blogs[0].time }}</small>
-      <h2>{{ blogs[0].title }}</h2>
-    </article>
+<div id="blog">
+  <div class="wrapper">
+      <main>
+          <div>
+          <article *ngFor="let bloginfo of blogs">
+              <figure>
+                  <img [src]="bloginfo.img" alt={{bloginfo.title}}/>
+                  <figcaption>
+                      {{bloginfo.username}}
+                  </figcaption>
+              </figure>
+              <small>{{ bloginfo.time }}</small>
+              <h2>{{ bloginfo.title }}</h2>
+          </article>
+          </div>
+      </main>
   </div>
-</main>
+</div>
