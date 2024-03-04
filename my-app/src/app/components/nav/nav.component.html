@@ -3,7 +3,7 @@
     <nav>
       <ul>
         <li>
-          <a [routerLink]="['index']">startsida</a>
+          <a [routerLink]="['']">startsida</a>
         </li>
         <li>
           <a [routerLink]="['blog']">blogg</a>
@@ -20,10 +20,10 @@
           </li>
         </ng-template>
         <li *ngIf="userRole === 'user'">
-          <a routerLink="/user">User Panel</a>
+          <a [routerLink]="['userpanel']">User Panel</a>
         </li>
         <li *ngIf="userRole === 'admin'">
-          <a routerLink="/admin">Admin Panel</a>
+          <a [routerLink]="['adminpanel']">Admin Panel</a>
         </li>
       </ul>
     </nav>

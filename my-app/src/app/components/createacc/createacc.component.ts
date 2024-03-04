@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './createacc.component.html',
-  styleUrl: './createacc.component.scss'
+  styleUrls: ["../../../styles.scss"],
 })
 export class CreateaccComponent {
 

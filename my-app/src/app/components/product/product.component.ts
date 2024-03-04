@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { ProductService } from '../../service/product.service';
 import { product } from '../../models/product';
+import { AuthService } from '../../service/auth.service';
 @Component({
   selector: 'app-product',
   standalone: true,
@@ -16,15 +17,20 @@ import { product } from '../../models/product';
   styleUrls: ['../../../styles.scss']
 })
 export class ProductComponent {
+  isAuthenticated: boolean = false
+  userRole: string | undefined;
   constructor(
     private router: Router,
-    private productService :ProductService 
+    private productService :ProductService, 
+    private  authService :AuthService
   ){}
 
   products: product[] = [];
 
   ngOnInit():void{
     this.fetchProduct();
+    this.isAuthenticated = this.authService.isAuthenticated();
+    this.setUserRole();
   }
   fetchProduct() {
   this.productService.getProduct()
@@ -40,11 +46,19 @@ export class ProductComponent {
   onClicked(productid:number):void {
     console.log('clicked:', productid);
   }
+  async setUserRole(): Promise<void> {
+    if (this.isAuthenticated) {
+      try {
+        await this.authService.verify();
+        this.userRole = this.authService.getUserRole();
+        console.log('User role:', this.userRole);
+      } catch (error) {
+        console.error('Failed to verify user role:', error);
+      }
+    }
+  }
 }
 
 
-@NgModule({
-  declarations: [],
-  imports: [CommonModule]
-})
+
 export class productModule{}
