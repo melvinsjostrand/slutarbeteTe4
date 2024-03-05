@@ -1,11 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-adminpanel',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterModule,],
   templateUrl: './adminpanel.component.html',
-  styleUrl: './adminpanel.component.scss'
+  styleUrls: ["../../../styles.scss"],
 })
 export class AdminpanelComponent {
 

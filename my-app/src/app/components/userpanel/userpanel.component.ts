@@ -1,11 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-userpanel',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterModule,],
   templateUrl: './userpanel.component.html',
-  styleUrl: './userpanel.component.scss'
+  styleUrls: ['../../../styles.scss']
 })
 export class UserpanelComponent {
 

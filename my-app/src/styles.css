@@ -140,6 +140,21 @@ body .wrapper p {
   background-color: #c16b00;
 }
 
+#controller .wrapper main a {
+  display: flex;
+  justify-content: center;
+  padding: 15px 30px;
+  margin: 15px;
+  border-radius: 8px;
+  background-color: #F48700;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+}
+#controller .wrapper main a:hover {
+  background-color: #775412;
+}
+
 @media only screen and (min-width: 1080px) {
   header {
     text-align: right;

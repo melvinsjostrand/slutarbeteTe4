@@ -48,5 +48,5 @@ export class ProductService {
       }
     }
 
-  async addProductToCart(productid:number):Promise<void>{
-  }
+  async addProductToCart(productid:number):Promise<void>{}
+}
