@@ -1,18 +1,17 @@
 <div id="blog">
   <div class="wrapper">
       <main>
-          <div>
+        <p>hej</p>
           <article *ngFor="let bloginfo of blogs">
               <figure>
                   <img [src]="bloginfo.img" alt={{bloginfo.title}}/>
                   <figcaption>
-                      {{bloginfo.username}}
+                      {{bloginfo.id}}
                   </figcaption>
               </figure>
               <small>{{ bloginfo.time }}</small>
               <h2>{{ bloginfo.title }}</h2>
           </article>
-          </div>
       </main>
   </div>
 </div>

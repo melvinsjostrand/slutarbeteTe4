@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 
-import { AdminpanelComponent } from './components/adminpanel/adminpanel.component';
+//import { AdminpanelComponent } from './components/adminpanel/adminpanel.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogpostComponent } from './components/blogpost/blogpost.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -26,7 +26,7 @@ const routeConfig: Routes = [
   { path :'blog/createblog', component: CreateblogComponent, title: 'Create blog post'},
   { path :'login', component:LoginComponent, title:'login'},
   { path :'userpanel', component:UserpanelComponent, title: 'User panel'},
-  { path:'adminpanel', component:AdminpanelComponent, title: 'Admin panel'},
+  //{ path:'adminpanel', component:AdminpanelComponent, title: 'Admin panel'},
   { path:'product/checkout', component:CheckoutComponent, title: 'checkout'},
   ];
   export default routeConfig;

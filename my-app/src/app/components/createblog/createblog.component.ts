@@ -22,6 +22,7 @@ export class CreateblogComponent implements OnInit {
     this.createblog = this.formBuilder.group({
       title: ["", Validators.required],
       desc: ["", Validators.required],
+      text: ["", Validators.required],
       img: [null, Validators.required],
     });
   }
@@ -59,3 +60,4 @@ export class CreateblogComponent implements OnInit {
     }
   }
 }
+

@@ -27,4 +27,26 @@ export class ProductService {
       throw error;
     }
   }
-}
+
+  async addProduct(data : any):Promise<any>{
+      const response = await fetch(`${this.productUrl}`,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if(!response.ok){
+        throw new Error("Failed to create post: " + response.statusText);
+      }
+      
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        return await response.json();
+      } else {
+        return await response.text(); // Return response as text if it's not JSON
+      }
+    }
+
+  async addProductToCart(productid:number):Promise<void>{
+  }

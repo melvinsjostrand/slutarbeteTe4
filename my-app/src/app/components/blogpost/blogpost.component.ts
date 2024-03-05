@@ -29,13 +29,14 @@ export class BlogpostComponent{
         this.fetchBlogPost(blogid);
       }
     });
+    console.log(this.blogs);
   }
   fetchBlogPost(blogid: number): void {
     this.blogService
       .fetchBlogPost(blogid)
-      .then((blogPost) => {
-        this.blogs = blogPost;
-        console.log(blogPost);
+      .then((bloginfo) => {
+        this.blogs = Array.isArray(bloginfo) ? bloginfo : [bloginfo];
+        console.log(bloginfo);
       })
       .catch((error) => {
         console.error("Error fetching blog post:", error);
