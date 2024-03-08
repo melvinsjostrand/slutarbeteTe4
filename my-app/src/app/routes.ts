@@ -7,7 +7,6 @@ import { BlogpostComponent } from './components/blogpost/blogpost.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CreateaccComponent } from './components/createacc/createacc.component';
 import { CreateblogComponent } from './components/createblog/createblog.component';
-import { CreateproductComponent } from './components/createproduct/createproduct.component';
 import { DeleteuserComponent } from './components/deleteuser/deleteuser.component';
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
@@ -29,11 +28,10 @@ const routeConfig: Routes = [
   { path:'adminpanel', component:AdminpanelComponent, title: 'Admin panel'},
   { path:'product/checkout', component:CheckoutComponent, title: 'checkout'},
   { path: 'createacc', component: CreateaccComponent, title: 'Create Account'},
-  { path: 'createproduct', component: CreateproductComponent, title: 'Create Product'},
   { path: 'deleteuser', component: DeleteuserComponent, title: 'Delete User'},
   { path: 'removeblog', component: RemoveblogComponent, title: 'Remove Blog'},
   { path: 'removeproduct', component: RemoveproductComponent, title: 'Remove Product'},
   { path: 'adminpanel/updateproduct', component: UpdateproductComponent, title: 'Update Product'},
-  { path: 'uploadproduct', component: UploadproductComponent, title: 'Upload Product'},
+  { path: 'adminpanel/uploadproduct', component: UploadproductComponent, title: 'Upload Product'},
   ];
   export default routeConfig;

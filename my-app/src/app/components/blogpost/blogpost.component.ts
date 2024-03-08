@@ -23,23 +23,18 @@ export class BlogpostComponent{
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      const blogid = +params["id"];
-      console.log("Extracted blogid:", blogid);
+      const blogid = +params['id'];
+      console.log('Extracted blogid:', blogid);
       if (blogid) {
         this.fetchBlogPost(blogid);
       }
     });
-    console.log(this.blogs);
   }
   fetchBlogPost(blogid: number): void {
-    this.blogService
-      .fetchBlogPost(blogid)
-      .then((bloginfo) => {
+    this.blogService.fetchBlogPost(blogid)
+      .subscribe((bloginfo) => {
         this.blogs = Array.isArray(bloginfo) ? bloginfo : [bloginfo];
         console.log(bloginfo);
-      })
-      .catch((error) => {
-        console.error("Error fetching blog post:", error);
       });
   }
 }

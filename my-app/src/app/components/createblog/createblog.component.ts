@@ -21,7 +21,6 @@ export class CreateblogComponent implements OnInit {
   ngOnInit(): void {
     this.createblog = this.formBuilder.group({
       title: ["", Validators.required],
-      desc: ["", Validators.required],
       text: ["", Validators.required],
       img: [null, Validators.required],
     });

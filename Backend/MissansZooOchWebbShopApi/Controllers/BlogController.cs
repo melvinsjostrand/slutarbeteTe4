@@ -18,15 +18,15 @@ namespace MissansZooOchWebbShopApi.Controllers
         [HttpPost] //Skapa blogg
         public ActionResult CreateBlog(Blog blog)
         {
-            /*      Console.WriteLine(blog + "hej hej hej");
-                  string auth = Request.Headers["Authorization"];//GUID
-                   if (auth == null || !LoginController.sessionId.ContainsKey(auth))
-                   {
-                       return StatusCode(403, "du är inte inloggad");
-                   }
+            /*      
+                    string auth = Request.Headers["Authorization"];//GUID
+                    if (auth == null || !LoginController.sessionId.ContainsKey(auth))
+                    {
+                        return StatusCode(403, "du är inte inloggad");
+                    }
 
                    User user = (User)LoginController.sessionId[auth]; //userId Role username hashedpassword mail
-                  if (user.Role != 1)
+                   if (user.Role != 1)
                    {
                        return StatusCode(403, "Du har inte rätten till att skapa blogginlägg");
                    }*/
@@ -34,7 +34,7 @@ namespace MissansZooOchWebbShopApi.Controllers
             user.Id = 1;
             try
             {
-                blog.Img = SaveImage(blog.Img);
+                blog.Img = SaveImage(blog.Img); //byt namn på saveimg
                 connection.Open();
                 MySqlCommand query = connection.CreateCommand();
                 query.Prepare();
@@ -86,20 +86,20 @@ namespace MissansZooOchWebbShopApi.Controllers
              }
 
              user = (User)LoginController.sessionId[auth]; //userId Role username hashedpassword mail
-            try
-            {
+             try
+             {
                 connection.Open();
                 MySqlCommand query = connection.CreateCommand();
                 query.Prepare();
                 query.CommandText = "DELETE FROM blog WHERE Id = @Id";
                 query.Parameters.AddWithValue("@Id", blog.Id);
                 int row = query.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
+             }
+             catch (Exception ex)
+             {
                 return StatusCode(500, "gick inte att ta bort");
-            }
-            return StatusCode(200, "blogg har tagits bort");
+             }
+             return StatusCode(200, "blogg har tagits bort");
         }
 
         [HttpGet("AllBlog")]
@@ -145,8 +145,9 @@ namespace MissansZooOchWebbShopApi.Controllers
                 query.CommandText = "DELETE FROM blog WHERE userId = @userId";
                 query.Parameters.AddWithValue("@userId", user.Id);
 
-                MySqlDataReader data = query.ExecuteReader();
-            }catch(Exception ex)
+               
+            }
+            catch(Exception ex)
             {
                 return StatusCode(500, "något blev fel");
             }
@@ -203,7 +204,6 @@ namespace MissansZooOchWebbShopApi.Controllers
             }
             finally
             {
-                // Make sure to close the connection in a finally block
                 connection.Close();
             }
             return blog;

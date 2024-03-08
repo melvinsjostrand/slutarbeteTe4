@@ -1,1 +1,30 @@
-<p>uploadproduct works!</p>
+<div id="create">
+    <div class="wrapper">
+      <main>
+        <form [formGroup]="createproduct" (ngSubmit)="onSubmit()">
+            <label for="productname">produkt namn</label>
+            <input type="text" formControlName="productname" id="productname">
+            <label for="desc" class="labeldesc">Beskrivning </label>
+            <input type="text" formControlName="desc" id="desc">
+            <input type="file" (change)="onFileChange($event)" id="fileinput" name="hidden" class="file">
+            <label for="price">Pris</label>
+            <input type="number" formControlName="price" id="price">
+            <label for="stock">Antal i lager</label>
+            <input type="number" formControlName="stock" id="stock">
+            <select formControlName="category" id="category" [(ngModel)]="selectedCategory">
+                <option value="Annat">Annat</option>
+                <option value="Djur">Djur</option>
+                <option value="Foder">Foder</option>
+            </select>
+           <div *ngIf="selectedCategory === 'Foder'">
+            <label for="content">Information om innehåll</label>
+            <input type="text" name="content" id="content" formControlName="content">
+            <label for="feeding">Utfodring</label>
+            <input type="text" name="feeding" id="feeding" formControlName="feeding">
+        </div>
+            <button type="submit">Ladda upp produkt</button>
+
+        </form>
+    </main>
+    </div>
+  </div>
