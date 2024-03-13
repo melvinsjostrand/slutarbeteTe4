@@ -63,7 +63,7 @@ namespace MissansZooOchWebbShopApi.Controllers
             string path = "../../my-app/src/app/img/" + uniqueFileName + "." + fileType;
             System.IO.File.WriteAllBytes(path, imageData);
 
-            return path;
+            return path; 
         }
 
 

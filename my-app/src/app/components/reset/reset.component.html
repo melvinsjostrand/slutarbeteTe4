@@ -1,0 +1,14 @@
+
+<div id="create">
+    <div class="wrapper">
+      <h1>Ändra lösenord</h1>
+      <form [formGroup]="resetPasswordForm" >
+        <label for="password">password:</label>
+        <input type="password" id="password" formControlName="password">
+        <label for="confirmpassword">confirmpassword:</label>
+        <input type="password" id="confirmpassword" formControlName="confirmpassword">
+        <small *ngIf="resetPasswordForm.hasError('confirmPasswordValidator','confirmpassword')">Password dosen't match</small>
+        <button (click)="reset()"type="submit">Reset</button>
+      </form>
+    </div>
+  </div>

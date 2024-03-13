@@ -16,7 +16,8 @@ import { RemoveproductComponent } from './components/removeproduct/removeproduct
 import { UpdateproductComponent } from './components/updateproduct/updateproduct.component';
 import { UploadproductComponent } from './components/uploadproduct/uploadproduct.component';
 import { UserpanelComponent } from './components/userpanel/userpanel.component';
-
+import { ResetComponent } from './components/reset/reset.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 const routeConfig: Routes = [
   { path: 'blogpost/:id', component: BlogpostComponent },
   { path: '', component: IndexComponent, title: 'Startsida'},
@@ -33,5 +34,8 @@ const routeConfig: Routes = [
   { path: 'removeproduct', component: RemoveproductComponent, title: 'Remove Product'},
   { path: 'adminpanel/updateproduct', component: UpdateproductComponent, title: 'Update Product'},
   { path: 'adminpanel/uploadproduct', component: UploadproductComponent, title: 'Upload Product'},
+  { path: 'userpanel/resetpassword', component:ResetComponent, title:'reset password'},
+  {path: 'login/createacc', component:CreateaccComponent, title: 'Sign up'},
+  {path:'forgotPassword', component:ForgotPasswordComponent, title: 'Forgot Password'}
   ];
   export default routeConfig;

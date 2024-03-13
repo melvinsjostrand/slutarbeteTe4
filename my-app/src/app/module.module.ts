@@ -15,7 +15,6 @@ import { BlogComponent } from './components/blog/blog.component';
 import { BlogpostComponent } from './components/blogpost/blogpost.component';
 import { CreateaccComponent } from './components/createacc/createacc.component';
 import { CreateblogComponent } from './components/createblog/createblog.component';
-import { CreateproductComponent } from './components/createproduct/createproduct.component';
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';

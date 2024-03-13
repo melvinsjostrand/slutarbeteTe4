@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj": {}
+    "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj": {
+    "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
+        "projectUniqueName": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
         "projectName": "MissansZooOchWebbShopApi",
-        "projectPath": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
+        "projectPath": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
         "packagesPath": "C:\\Users\\Elev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\obj\\",
+        "outputPath": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\backend\\MissansZooOchWebbShopApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elev\\AppData\\Roaming\\NuGet\\NuGet.Config",

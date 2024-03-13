@@ -1,5 +1,5 @@
 @import 'colors';
-
+@import "../node_modules/bootstrap/scss/bootstrap";
 @font-face {
     font-family: Animal-Paw;
     src: url(./Animal-Paw.ttf);
@@ -11,6 +11,16 @@
   }
 
 body {
+    #button{
+      background-color: $color-primary;
+    }
+  #forgot {
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
   font-family: AustieBost;
   background-color: $color-tertiary;
   margin: 0;
@@ -221,6 +231,9 @@ body {
           background-color: darken($color-primary, 10%);
         }
       }
+    }
+    small{
+      color: red;
     }
   }
 }
