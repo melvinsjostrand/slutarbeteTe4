@@ -1,5 +1,8 @@
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import { Router } from "@angular/router";
+import { error } from "console";
+import { Observable, catchError, throwError } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -8,7 +11,8 @@ export class AuthService {
   private baseUrl = "https://localhost:7063/";
   private userRole: any = "";
   constructor(
-    private router: Router
+    private router: Router,
+    private http:HttpClient
   ) {}
 
   async login(mail: string, password: string): Promise<void> {
@@ -29,7 +33,7 @@ export class AuthService {
 
       const token = await response.text();
       console.log(token);
-      localStorage.setItem("user", token);
+      localStorage.setItem("auth", token);
 
       // Call verify method after successful login
       await this.verify();
@@ -40,6 +44,10 @@ export class AuthService {
       console.error("Login failed:", error);
       // Handle login failure
     }
+  }
+
+  createUser(user: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}user`, user);
   }
 
   /*async register(registerModel: registerModel): Promise<SingleResponseModel<TokenModel>> {
@@ -99,20 +107,21 @@ export class AuthService {
       return undefined;
     }
   }
-
-  async logout(): Promise<void> {
-    try {
-      localStorage.removeItem("user");
-      await this.verify();
-      this.userRole = undefined;
-      window.location.reload();
-    } catch (error) {
-      console.error("Logout failed:", error);
-    }
+  private authToken = 'Authorization'; 
+  logout(): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', `basic ${this.authToken}`);
+    localStorage.removeItem('user');
+    this.userRole = undefined;
+    return this.http.post<any>(`${this.baseUrl}logout`, {}, { headers }).pipe(
+      catchError(error => {
+        console.error('Logout failed:', error);
+        return throwError(error);
+      })
+    );
   }
 
   isAuthenticated(): boolean {
-    return !!localStorage.getItem("user");
+    return !!localStorage.getItem("auth");
   }
 
   setUserRole(role: any): void {

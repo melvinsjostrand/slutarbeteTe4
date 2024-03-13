@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
@@ -56,7 +57,6 @@ namespace MissansZooOchWebbShopApi.Controllers
                 if (rows > 0)
                 {
                     user.Id = (int)query.LastInsertedId;
-                    sessionId.Add(key, user);
                     connection.Close();
                     return StatusCode(201, key);
                 }
@@ -68,7 +68,7 @@ namespace MissansZooOchWebbShopApi.Controllers
                 return StatusCode(500);
             }
             connection.Close();
-            return BadRequest();
+            return StatusCode(201);
         }
 
         [HttpGet("Login")]
@@ -160,6 +160,7 @@ namespace MissansZooOchWebbShopApi.Controllers
         public ActionResult Logout()
         {
             string auth = Request.Headers["Authorization"];
+            Console.WriteLine(auth);
             if (sessionId.ContainsKey(auth))
             {
                 sessionId.Remove(auth);

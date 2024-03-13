@@ -1,19 +1,19 @@
 <div id="create">
-    <div class="wrapper">
-      <main>
-        <h2>Skapa konto</h2>
-        <form action="">
-            <label for="username">Användarnamn</label>
-            <input type="text" name="username" id="username">
-            <label for="mail">Mail</label>
-            <input type="email" name="mail" id="mail">
-            <label for="password">Lösenord</label>
-            <input type="password" name="password" id="password">
-            <label for="address">address</label>
-            <input type="text" name="address" id="address">
-            <button type="submit">Skapa konto</button>
-            <span id="error"></span>
-        </form>
-      </main>
-    </div>
+  <div class="wrapper">
+    <main>
+      <h2>Skapa konto</h2>
+      <form [formGroup]="createAccountForm" (ngSubmit)="onSubmit()">
+        <label for="username">Användarnamn</label>
+        <input type="text" formControlName="username">
+        <label for="mail">Mail</label>
+        <input type="email" formControlName="mail">
+        <label for="password">Lösenord</label>
+        <input type="password" formControlName="password">
+        <label for="address">address</label>
+        <input type="text" formControlName="address">
+        <button type="submit">Skapa konto</button>
+        <span id="error"></span>
+      </form>
+    </main>
   </div>
+</div>

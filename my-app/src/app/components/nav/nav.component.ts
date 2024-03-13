@@ -41,7 +41,14 @@ export class NavComponent {
 
 
     logout(): void {
-      this.authService.logout();
-      this.isAuthenticated = false;
+      this.authService.logout().subscribe(
+        () => {
+
+        },
+        (error: any) => {
+          console.error('Logout failed:', error);
+
+        }
+      );
     }
 }
