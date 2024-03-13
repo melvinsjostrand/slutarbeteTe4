@@ -98,6 +98,22 @@
     ]
   },
   {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.BlogController",
+    "Method": "DeleteBlog",
+    "RelativePath": "Blog/userblog",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "MissansZooOchWebbShopApi.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MissansZooOchWebbShopApi.Controllers.CartController",
     "Method": "AddToCart",
     "RelativePath": "Cart",
@@ -378,6 +394,22 @@
       {
         "Name": "product",
         "Type": "MissansZooOchWebbShopApi.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MissansZooOchWebbShopApi.Controllers.ProductController",
+    "Method": "DeleteProduct",
+    "RelativePath": "Product/userblog",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "MissansZooOchWebbShopApi.User",
         "IsRequired": true
       }
     ],

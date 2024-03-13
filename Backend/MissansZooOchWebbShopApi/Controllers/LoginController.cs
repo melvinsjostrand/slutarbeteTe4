@@ -41,19 +41,20 @@ namespace MissansZooOchWebbShopApi.Controllers
                 MySqlCommand query = connection.CreateCommand();
                 query.Prepare();
                 query.CommandText =
-                    "INSERT INTO `user` (`Role`, `username`, `password`, `mail`, address) " +
-                    "VALUES(1, @username, @password, @mail, @address)";
+                    "INSERT INTO `user` (`Role`, `username`, `password`, `mail`, address, guid) " +
+                    "VALUES(1, @username, @password, @mail, @address, @guid)";
                 string hashedpassword = BCrypt.Net.BCrypt.HashPassword(user.password);
+                Guid guid = Guid.NewGuid();
+                string key = guid.ToString();
                 query.Parameters.AddWithValue("@username", user.username);
                 query.Parameters.AddWithValue("@password", hashedpassword);
                 query.Parameters.AddWithValue("@mail", user.mail);
                 query.Parameters.AddWithValue("@address", user.address);
+                query.Parameters.AddWithValue("@guid", key);
                 int rows = query.ExecuteNonQuery();
 
                 if (rows > 0)
                 {
-                    Guid guid = Guid.NewGuid();
-                    string key = guid.ToString();
                     user.Id = (int)query.LastInsertedId;
                     sessionId.Add(key, user);
                     connection.Close();
@@ -83,11 +84,12 @@ namespace MissansZooOchWebbShopApi.Controllers
             MySqlDataReader data = query.ExecuteReader();
             try
             {
-
+                string storedGuid = string.Empty;
                 string hash = String.Empty;
-
                 while (data.Read())
                 {
+
+                    storedGuid = data.GetString("guid");
                     hash = data.GetString("password");
                     user.Id = data.GetInt32("Id");
                     user.mail = data.GetString("mail");
@@ -95,12 +97,9 @@ namespace MissansZooOchWebbShopApi.Controllers
                 }
                 if (hash != String.Empty && BCrypt.Net.BCrypt.Verify(user.password, hash)) // Crashes when hash is empty
                 {
-                    Guid guid = Guid.NewGuid();
-                    string key = guid.ToString();
-                    sessionId.Add(key, user);
-                    connection.Close();
-                    Console.WriteLine(key, user);
-                    return Ok(key);
+                    sessionId.Add(storedGuid, user);
+                    Console.WriteLine(storedGuid, user);
+                    return Ok(storedGuid);
                 }
             }
             catch (Exception ex)

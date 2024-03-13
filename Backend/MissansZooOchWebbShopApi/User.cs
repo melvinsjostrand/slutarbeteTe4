@@ -10,5 +10,6 @@ namespace MissansZooOchWebbShopApi
         public string password { get; set; } = string.Empty;
         public string mail { get; set; } = string.Empty;
         public string address { get; set;} = string.Empty;
+        public string? guid { get; set; }
     }
 }

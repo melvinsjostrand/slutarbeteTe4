@@ -2288,19 +2288,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elev\\.nuget\\packages\\": {}
+    "C:\\Users\\melvi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
+      "projectUniqueName": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
       "projectName": "MissansZooOchWebbShopApi",
-      "projectPath": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
-      "packagesPath": "C:\\Users\\Elev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\obj\\",
+      "projectPath": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
+      "packagesPath": "C:\\Users\\melvi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Elev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\melvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2308,6 +2308,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2320,6 +2321,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2362,7 +2368,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

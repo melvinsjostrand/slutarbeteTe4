@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F502CF02-4C82-4720-B216-AE50F6D5F2EA}|MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj|c:\\users\\melvi\\onedrive\\dokument\\github\\slutarbetete4\\backend\\missanszooochwebbshopapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F502CF02-4C82-4720-B216-AE50F6D5F2EA}|MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj|solutionrelative:missanszooochwebbshopapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F502CF02-4C82-4720-B216-AE50F6D5F2EA}|MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj|c:\\users\\melvi\\onedrive\\dokument\\github\\slutarbetete4\\backend\\missanszooochwebbshopapi\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F502CF02-4C82-4720-B216-AE50F6D5F2EA}|MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj|solutionrelative:missanszooochwebbshopapi\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F502CF02-4C82-4720-B216-AE50F6D5F2EA}|MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj|c:\\users\\melvi\\onedrive\\dokument\\github\\slutarbetete4\\backend\\missanszooochwebbshopapi\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F502CF02-4C82-4720-B216-AE50F6D5F2EA}|MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj|solutionrelative:missanszooochwebbshopapi\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F502CF02-4C82-4720-B216-AE50F6D5F2EA}|MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj|c:\\users\\melvi\\onedrive\\dokument\\github\\slutarbetete4\\backend\\missanszooochwebbshopapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F502CF02-4C82-4720-B216-AE50F6D5F2EA}|MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj|solutionrelative:missanszooochwebbshopapi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F502CF02-4C82-4720-B216-AE50F6D5F2EA}|MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj|c:\\users\\melvi\\onedrive\\dokument\\github\\slutarbetete4\\backend\\missanszooochwebbshopapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +50,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\User.cs",
+              "RelativeDocumentMoniker": "MissansZooOchWebbShopApi\\User.cs",
+              "ToolTip": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\User.cs",
+              "RelativeToolTip": "MissansZooOchWebbShopApi\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T17:37:14.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "MissansZooOchWebbShopApi\\Controllers\\ProductController.cs",
@@ -54,11 +71,12 @@
               "RelativeToolTip": "MissansZooOchWebbShopApi\\Controllers\\ProductController.cs",
               "ViewState": "AQIAAN0AAAAAAAAAAAAqwAcBAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-22T20:43:26.253Z"
+              "WhenOpened": "2024-01-22T20:43:26.253Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "BlogController.cs",
               "DocumentMoniker": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\Controllers\\BlogController.cs",
               "RelativeDocumentMoniker": "MissansZooOchWebbShopApi\\Controllers\\BlogController.cs",
@@ -71,20 +89,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "MissansZooOchWebbShopApi\\Controllers\\LoginController.cs",
               "ToolTip": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\Controllers\\LoginController.cs",
               "RelativeToolTip": "MissansZooOchWebbShopApi\\Controllers\\LoginController.cs",
-              "ViewState": "AQIAAKkAAAAAAAAAAAAewMMAAAAMAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAuwEcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-01-21T00:06:16.838Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\Product.cs",
               "RelativeDocumentMoniker": "MissansZooOchWebbShopApi\\Product.cs",
@@ -96,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "MissansZooOchWebbShopApi\\Controllers\\CartController.cs",
@@ -108,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Cart.cs",
               "DocumentMoniker": "C:\\Users\\melvi\\OneDrive\\Dokument\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\Cart.cs",
               "RelativeDocumentMoniker": "MissansZooOchWebbShopApi\\Cart.cs",
