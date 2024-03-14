@@ -8,7 +8,7 @@ export class PostService {
   async createPost(data: any): Promise<any> {
     const url = "https://localhost:7063/Blog";
     const headers = new Headers();
-    const guid = localStorage.getItem('user');
+    const guid = localStorage.getItem('auth');
     if (!guid) {
       throw new Error("GUID not found in localStorage");
     }

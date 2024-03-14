@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc;
+using MissansZooOchWebbShopApi.Helper;
+using MissansZooOchWebbShopApi.NewFolder;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Crypto.Generators;
 using System.Collections;
@@ -10,6 +12,7 @@ using System.Data;
 using System.Linq.Expressions;
 using System.Net.Mail;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 
 
@@ -21,7 +24,13 @@ namespace MissansZooOchWebbShopApi.Controllers
     {
         MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=;database=webbshop");
         public static Hashtable sessionId = new Hashtable();
-
+        private readonly IConfiguration _configuration;
+        private readonly IEmailService _emailService;
+        public LoginController(IConfiguration configuration, IEmailService emailService)
+        {
+            _configuration = configuration;
+            _emailService = emailService;
+        }
         [HttpPost]
         public IActionResult CreateUser(User user)
         
@@ -322,6 +331,18 @@ namespace MissansZooOchWebbShopApi.Controllers
             }
             return Ok(user);
         }
+      /*  [HttpPost("Send-Reset-Email/{email}")]
+        public async Task<IActionResult> SendEmail(string email)
+        {
+            User user = new User
+            var tokenBytes = RandomNumberGenerator.GetBytes(64);
+            var emailToken = Convert.ToBase64String(tokenBytes);
+            user.ResetPasswordToken = emailToken;
+            user.ResetPasswordExpiry = DateTime.Now.AddMinutes(15);
+            string from = _configuration["EmailSettings:From"];
+            var emailModel = new EmailModel(email,"Reset Password", EmailBody.EmailStringBody(email, emailToken));
+            _emailservice.SendEmail(emailModel);
+        }*/
     }
 }
     

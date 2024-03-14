@@ -11,5 +11,7 @@ namespace MissansZooOchWebbShopApi
         public string mail { get; set; } = string.Empty;
         public string address { get; set;} = string.Empty;
         public string? guid { get; set; }
+        public string? ResetPasswordToken { get; set; }
+        public DateTime ResetPasswordExpiry { get; set; }
     }
 }

@@ -43,7 +43,7 @@ export class NavComponent {
     logout(): void {
       this.authService.logout().subscribe(
         () => {
-
+        
         },
         (error: any) => {
           console.error('Logout failed:', error);

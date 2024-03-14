@@ -50,38 +50,12 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}user`, user);
   }
 
-  /*async register(registerModel: registerModel): Promise<SingleResponseModel<TokenModel>> {
-    try {
-      const response = await fetch(`${this.url}/register`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(registerModel)
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to register: ' + response.statusText);
-      }
-
-      const contentType = response.headers.get('content-type');
-      if (contentType && contentType.includes('application/json')) {
-        return await response.json();
-      } else {
-        throw new Error('Failed to register: Invalid response format');
-      }
-    } catch (error) {
-      console.error('Error registering:', error);
-      throw error;
-    }
-  }
-*/
   async verify(): Promise<void> {
     try {
       console.log("Verifying user role...");
       const response = await fetch(`${this.baseUrl}User/Verify`, {
         headers: {
-          Authorization: localStorage.getItem("user") || "",
+          Authorization: localStorage.getItem("auth") || "",
         },
       });
 
@@ -107,12 +81,15 @@ export class AuthService {
       return undefined;
     }
   }
-  private authToken = 'Authorization'; 
+  
   logout(): Observable<any> {
-    const headers = new HttpHeaders().set('Authorization', `basic ${this.authToken}`);
-    localStorage.removeItem('user');
+    const authToken = localStorage.getItem("auth"); 
+    console.log(authToken);
+    const headers = new HttpHeaders().set('Authorization', `${authToken}`);
+    localStorage.removeItem('auth');
+    window.location.reload();
     this.userRole = undefined;
-    return this.http.post<any>(`${this.baseUrl}logout`, {}, { headers }).pipe(
+    return this.http.post<any>(`${this.baseUrl}user/logout`, {}, { headers }).pipe(
       catchError(error => {
         console.error('Logout failed:', error);
         return throwError(error);

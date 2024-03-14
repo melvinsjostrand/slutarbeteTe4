@@ -1,20 +1,29 @@
-<div id="blogpost">
+<div id="blogpost" *ngIf="bloginfo">
   <div class="wrapper">
-      <main>
-        <div>
-          <article *ngFor="let bloginfo of blogs">
-              <figure>
-                  <img [src]="bloginfo.img" alt={{bloginfo.title}}/>
-                  <figcaption>
-                    {{ bloginfo.title }}
-                  </figcaption>
-              </figure>
-
-              <p>{{bloginfo.text}}</p>
-              <p>{{ bloginfo.time }}</p>
-          </article>
+    <main>
+      <div>
+      <article>
+        <figure>
+          <img [src]="bloginfo.img" alt="{{ bloginfo.title }}"/>
+          <figcaption>{{ bloginfo.title }}</figcaption>
+        </figure>
+        <p>{{ bloginfo.text }}</p>
+        <p>{{ bloginfo.time }}</p>
+      </article>
+    </div>
+      <div id="comment" *ngIf="bloginfo.comments">
+        <h2>Comments</h2>
+        <div *ngFor="let comment of bloginfo.comments">
+          <p>namn: {{comment.username}}</p>
+          <p>kommentar: {{comment.text }}</p>
         </div>
-        <div></div>
-      </main>
+        <h2>Post a Comment</h2>
+        <form (ngSubmit)="postComment()">
+            <label for="comment">Comment:</label>
+            <textarea id="comments" name="comment" [(ngModel)]="newComment" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
   </div>
 </div>

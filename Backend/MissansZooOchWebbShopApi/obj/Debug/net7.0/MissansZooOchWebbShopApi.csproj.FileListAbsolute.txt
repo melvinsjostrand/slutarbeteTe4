@@ -229,3 +229,7 @@ C:\Users\Elev\Documents\GitHub\slutarbeteTe4\Backend\MissansZooOchWebbShopApi\ob
 C:\Users\Elev\Documents\GitHub\slutarbeteTe4\Backend\MissansZooOchWebbShopApi\obj\Debug\net7.0\MissansZooOchWebbShopApi.pdb
 C:\Users\Elev\Documents\GitHub\slutarbeteTe4\Backend\MissansZooOchWebbShopApi\obj\Debug\net7.0\MissansZooOchWebbShopApi.genruntimeconfig.cache
 C:\Users\Elev\Documents\GitHub\slutarbeteTe4\Backend\MissansZooOchWebbShopApi\obj\Debug\net7.0\ref\MissansZooOchWebbShopApi.dll
+C:\Users\Elev\Documents\GitHub\slutarbeteTe4\Backend\MissansZooOchWebbShopApi\bin\Debug\net7.0\MailKit.dll
+C:\Users\Elev\Documents\GitHub\slutarbeteTe4\Backend\MissansZooOchWebbShopApi\bin\Debug\net7.0\MimeKit.dll
+C:\Users\Elev\Documents\GitHub\slutarbeteTe4\Backend\MissansZooOchWebbShopApi\bin\Debug\net7.0\NETCore.MailKit.dll
+C:\Users\Elev\Documents\GitHub\slutarbeteTe4\Backend\MissansZooOchWebbShopApi\bin\Debug\net7.0\BouncyCastle.Crypto.dll
