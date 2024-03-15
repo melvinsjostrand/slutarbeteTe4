@@ -21,7 +21,13 @@ namespace MissansZooOchWebbShopApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=;database=webbshop");
+        MySqlConnection connection;
+
+        public LoginController(IConfiguration config)
+        {
+            string ip = config["ip"];
+            connection = new MySqlConnection(ip);
+        }
         public static Hashtable sessionId = new Hashtable();
 
         [HttpPost]

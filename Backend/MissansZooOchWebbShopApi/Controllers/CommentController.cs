@@ -8,10 +8,15 @@ namespace MissansZooOchWebbShopApi.Controllers
     [ApiController]
     public class CommentController : Controller
     {
-        public const string PATH = "";
-        MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=;database=webbshop");
-        public CommentController()
+        MySqlConnection connection;
+
+        public CommentController(IConfiguration config)
         {
+            string ip = config["ip"];
+            connection = new MySqlConnection(ip);
+        }
+        public CommentController()
+        { 
             Console.WriteLine("Comment");
         }
         [HttpPost]

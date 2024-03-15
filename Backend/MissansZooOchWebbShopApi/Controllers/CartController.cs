@@ -9,7 +9,13 @@ namespace MissansZooOchWebbShopApi.Controllers
     [ApiController]
     public class CartController : Controller
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=;database=webbshop");
+        MySqlConnection connection;
+
+        public CartController(IConfiguration config)
+        {
+            string ip = config["ip"];
+            connection = new MySqlConnection(ip);
+        }
 
         [HttpPost]//ladda upp till cart
         public ActionResult AddToCart(Product product)

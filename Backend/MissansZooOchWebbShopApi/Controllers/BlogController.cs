@@ -12,13 +12,19 @@ namespace MissansZooOchWebbShopApi.Controllers
     [ApiController]
     public class BlogController : Controller
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=;database=webbshop");
+        MySqlConnection connection;
+
+        public BlogController(IConfiguration config)
+        {
+            string ip = config["ip"];
+            connection = new MySqlConnection(ip);
+        }
         private Comment comments;
 
         [HttpPost] //Skapa blogg
         public ActionResult CreateBlog(Blog blog)
         {
-            /*      
+              
                     string auth = Request.Headers["Authorization"];//GUID
                     if (auth == null || !LoginController.sessionId.ContainsKey(auth))
                     {
@@ -29,9 +35,7 @@ namespace MissansZooOchWebbShopApi.Controllers
                    if (user.Role != 1)
                    {
                        return StatusCode(403, "Du har inte rätten till att skapa blogginlägg");
-                   }*/
-            User user = new User();
-            user.Id = 1;
+                   }
             try
             {
                 blog.Img = SaveImage(blog.Img); //byt namn på saveimg

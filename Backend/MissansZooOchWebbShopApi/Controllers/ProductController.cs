@@ -10,7 +10,13 @@ namespace MissansZooOchWebbShopApi.Controllers
     [ApiController]
     public class ProductController : Controller
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=;database=webbshop");
+        MySqlConnection connection;
+
+        public ProductController(IConfiguration config)
+        {
+            string ip = config["ip"];
+            connection = new MySqlConnection(ip);
+        }
 
         [HttpPost] //skapa produkt
         public ActionResult CreateProduct(Product product)
