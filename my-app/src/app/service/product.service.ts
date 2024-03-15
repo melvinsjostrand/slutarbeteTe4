@@ -7,23 +7,23 @@ import { product } from "../models/product";
   providedIn: "root",
 })
 export class ProductService {
-  private productUrl = "https://localhost:7063/Product";
+  private productUrl = "https://missanszooochwebbshopapi20240315095708.azurewebsites.net/Product";
 
   async getProduct(): Promise<product[]> {
     try {
       const response = await fetch(`${this.productUrl}/AllProducts`);
       if (!response.ok) {
-        throw new Error("Failed to fetch blogs: " + response.statusText);
+        throw new Error("Failed to fetch products: " + response.statusText);
       }
 
       const contentType = response.headers.get("content-type");
       if (contentType && contentType.includes("application/json")) {
         return await response.json();
       } else {
-        throw new Error("Failed to fetch blogs: Invalid response format");
+        throw new Error("Failed to fetch products: Invalid response format");
       }
     } catch (error) {
-      console.error("Error fetching blogs:", error);
+      console.error("Error fetching products:", error);
       throw error;
     }
   }

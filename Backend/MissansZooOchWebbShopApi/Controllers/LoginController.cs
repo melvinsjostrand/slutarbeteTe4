@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc;
-using MissansZooOchWebbShopApi.Helper;
-using MissansZooOchWebbShopApi.NewFolder;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Crypto.Generators;
 using System.Collections;
@@ -24,21 +23,15 @@ namespace MissansZooOchWebbShopApi.Controllers
     {
         MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=;database=webbshop");
         public static Hashtable sessionId = new Hashtable();
-        private readonly IConfiguration _configuration;
-        private readonly IEmailService _emailService;
-        public LoginController(IConfiguration configuration, IEmailService emailService)
-        {
-            _configuration = configuration;
-            _emailService = emailService;
-        }
+
         [HttpPost]
         public IActionResult CreateUser(User user)
-        
-        
-        
+
+
+
         {
             string auth = Request.Headers["Authorization"];
-            Console.WriteLine(user.mail + " "+ user.username);
+            Console.WriteLine(user.mail + " " + user.username);
             string message = CheckIfUniqueUser(user);
             if (message != String.Empty)
             {
@@ -157,7 +150,8 @@ namespace MissansZooOchWebbShopApi.Controllers
                 query.CommandText = "SELECT password FROM user WHERE Id = Id";
                 query.Parameters.AddWithValue("@Id", user.Id);
                 query.ExecuteNonQuery();
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 connection.Close();
                 return StatusCode(500);
@@ -181,34 +175,35 @@ namespace MissansZooOchWebbShopApi.Controllers
         [HttpPut("ChangeRole")]
         public ActionResult UpdateRole() //funkar ej
         {
-                string auth = Request.Headers["Authorization"];
-                if (auth == null || !LoginController.sessionId.ContainsKey(auth))
-                    {
-                        return StatusCode(403, "du är inte inloggad");
-                    }
-
-                User user = (User)LoginController.sessionId[auth]; //Id Role username hashedpassword mail
-                if (user.Role != 2)
-                {
-                    return StatusCode(403, "Du har inte rätten till att skapa produkter");
-                }
-                try
-                {
-                    connection.Open();
-                    MySqlCommand query = connection.CreateCommand();
-                    query.Prepare();
-                    query.CommandText = "UPDATE `user` " + "SET `Role` = @Role " + "WHERE `username` = @username";
-                    query.Parameters.AddWithValue("@Role", user.Role);
-                    query.Parameters.AddWithValue("@username", user.username);
-                    int row = query.ExecuteNonQuery();
-                }catch (Exception ex)
-                {
-                    connection.Close();
-                    return StatusCode(500);
-                }
-                connection.Close();
-                return StatusCode(200, "roll ändrar");
+            string auth = Request.Headers["Authorization"];
+            if (auth == null || !LoginController.sessionId.ContainsKey(auth))
+            {
+                return StatusCode(403, "du är inte inloggad");
             }
+
+            User user = (User)LoginController.sessionId[auth]; //Id Role username hashedpassword mail
+            if (user.Role != 2)
+            {
+                return StatusCode(403, "Du har inte rätten till att skapa produkter");
+            }
+            try
+            {
+                connection.Open();
+                MySqlCommand query = connection.CreateCommand();
+                query.Prepare();
+                query.CommandText = "UPDATE `user` " + "SET `Role` = @Role " + "WHERE `username` = @username";
+                query.Parameters.AddWithValue("@Role", user.Role);
+                query.Parameters.AddWithValue("@username", user.username);
+                int row = query.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                return StatusCode(500);
+            }
+            connection.Close();
+            return StatusCode(200, "roll ändrar");
+        }
         [HttpPut("Changepassword")]
         public ActionResult Changepassword(User user) //funkar ej
         {
@@ -223,7 +218,8 @@ namespace MissansZooOchWebbShopApi.Controllers
                 query.Parameters.AddWithValue("@password", hashedpassword);
                 query.Parameters.AddWithValue("@Id", user.Id);
                 int row = query.ExecuteNonQuery();
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 connection.Close();
                 return StatusCode(500);
@@ -269,12 +265,13 @@ namespace MissansZooOchWebbShopApi.Controllers
                     {
                         message = "Användarnamnet finns redan";
                     }
-                    if(data.GetString("mail") == user.mail)
+                    if (data.GetString("mail") == user.mail)
                     {
                         message = "Denna mailadress finns redan";
                     }
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -297,7 +294,8 @@ namespace MissansZooOchWebbShopApi.Controllers
                 query.Parameters.AddWithValue("@Id", user.Id);
 
                 MySqlDataReader data = query.ExecuteReader();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return StatusCode(500, "FEL");
             }
@@ -331,18 +329,6 @@ namespace MissansZooOchWebbShopApi.Controllers
             }
             return Ok(user);
         }
-      /*  [HttpPost("Send-Reset-Email/{email}")]
-        public async Task<IActionResult> SendEmail(string email)
-        {
-            User user = new User
-            var tokenBytes = RandomNumberGenerator.GetBytes(64);
-            var emailToken = Convert.ToBase64String(tokenBytes);
-            user.ResetPasswordToken = emailToken;
-            user.ResetPasswordExpiry = DateTime.Now.AddMinutes(15);
-            string from = _configuration["EmailSettings:From"];
-            var emailModel = new EmailModel(email,"Reset Password", EmailBody.EmailStringBody(email, emailToken));
-            _emailservice.SendEmail(emailModel);
-        }*/
     }
 }
     

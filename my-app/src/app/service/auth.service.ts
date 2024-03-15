@@ -8,7 +8,7 @@ import { Observable, catchError, throwError } from "rxjs";
   providedIn: "root",
 })
 export class AuthService {
-  private baseUrl = "https://localhost:7063/";
+  private baseUrl = "https://missanszooochwebbshopapi20240315095708.azurewebsites.net";
   private userRole: any = "";
   constructor(
     private router: Router,

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lG6O8vN0RXnqglEhycjZtm7quAczgz47a6D/pJje6wbL4N4jh4ZUBBP2QPmaDk6Ngln7A9zcRA6f/MNTQK8Izw==",
+  "dgSpecHash": "NWC15b377McXd2Cj3Rm3WJB7ktXxsVHbcCIgqzW/Z6ms3S46/MrDQExhDL1eudlVJLooEjxBPxZbl1v03xhS9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\Backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
+  "projectFilePath": "C:\\Users\\Elev\\Documents\\GitHub\\slutarbeteTe4\\backend\\MissansZooOchWebbShopApi\\MissansZooOchWebbShopApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elev\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Elev\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
